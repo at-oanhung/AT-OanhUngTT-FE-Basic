@@ -1,9 +1,9 @@
 @import url(MyriadPro/fonts.css);
 @import url(style.css);
 
-.box-wp{
-  width: 85%;
-  margin: 0 5% 0 10%;
+.container{
+  width: 100%;
+  padding: 0 8%;
 }
 
 
@@ -277,8 +277,6 @@ nav ul li a:hover {
 }
 
 .section-copyright {
-  display: flex;
-  flex-wrap: wrap;
   border-top: 1px solid #81d1f9;
   text-transform: uppercase;
   padding: 23px 0;
