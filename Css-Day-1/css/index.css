@@ -1,9 +1,9 @@
-@import url(MyriadPro/fonts.css);
+@import url(utm-avo/fonts.css);
 @import url(style.css);
 
 .container{
   width: 100%;
-  padding: 0 8%;
+  padding: 0 180px;
 }
 
 
@@ -24,12 +24,12 @@
 }
 
 .logo .content h1 {
-  font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
+  font-family: 'UTM-AVo', Arial, Helvetica, sans-serif;
   font-size: 1.25em;
 }
 
 .logo .content p { 
-  font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
+  font-family: 'UTM-AVo', Arial, Helvetica, sans-serif;
   font-size: 1em;
 }
 
@@ -44,11 +44,14 @@
 
 .header-right p {
   font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .header-right a {
   padding-left: 20px;
   color: #4cc1fc;
+  font-weight: bold;
   font-size: 18px;
 }
 
@@ -59,21 +62,22 @@
   border-bottom: 1px solid #e9e9e9;
 }
 
-nav ul{
+.menu-nav ul{
   background-color: #ffffff;
 }
 
-nav ul li{
+.menu-nav ul li{
   border-left: 1px solid #e9e9e9;
 }
 
-nav ul li:first-child{
+.menu-nav ul li:first-child{
   border-left: 0;
 }
 
 nav ul li a {
   padding: 25px 20px;
   color: #8e8e8e;
+  font-size: 12px;
 }
 
 nav ul li a:hover {
@@ -97,6 +101,11 @@ nav ul li a:hover {
 .section-banner div {
   position: absolute;
   top: 45%;
+}
+
+.section-banner a {
+  font-family: 'UTM-AVo', Arial, Helvetica, sans-serif;
+  font-size: 12px;
 }
 
 .page-main .main-content{
