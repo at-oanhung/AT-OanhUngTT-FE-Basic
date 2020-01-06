@@ -15,11 +15,12 @@
 .header-left .logo {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 
 .logo .content {
-  padding: 15px ;
+  padding-left: 15px ;
   font-size: 16px;
 }
 
