@@ -1,30 +1,25 @@
 var a = 20;
 var b = 5;
 
-console.log('a =' + a);
-console.log("b = "+ b);
+console.log("a = " + a);
+console.log("b = " + b);
 
-function ex1(){
-  if(a == b){
+function ex1() {
+  if (a === b) {
     return 3 * (a + b);
   }
-  else {
-    return (a + b);
-  }
-
+  return (a + b);
 }
 
-function ex2(){
+function ex2() {
   var c = 19;
-  if(a > c){
+  if (a > c) {
     return 3 * (a - c);
   }
-  else {
-    return c -a;
-  }
+  return c - a;
 }
 
-function Ex3(s){
+function Ex3(s) { 
   var count = 0;
   var sum = 0;
   var index;
@@ -34,7 +29,7 @@ function Ex3(s){
 
   options.forEach(function(n) {
     arr.forEach(function(star, i) {
-      if(star === '*') {
+      if (star === '*') {
         index = i;
       }
     });
@@ -53,27 +48,13 @@ function Ex3(s){
 }
 
 function Ex4(s){
-  var count = 0;
-  var sum = 0;
-  var index;
-  var arr = s.split('');
-  var options = ['0','1','2','3','4','5','6','7','8','9'];
+  var a = [];  
   var result = [];
-
-  options.forEach(function(n) {
-    arr.forEach(function(star, i) {
-      if(star === '*') {
-        index = i;
-      }
-    });
-    arr.splice(index, 1, n);
-
-    sum = 0;
-    arr.forEach(function(i) {
-      sum += Number(i);
-    })    
-
-    if (sum % 3 === 0 && Number(arr[arr.length - 1]) % 2 === 0) {
+  a = Ex3(s);
+  console.log( a);
+  a.forEach(function(n) {
+    console.log( Number(a[n]) );
+    if ( Number(a[n]) % 2 === 0) {
       result.push(arr.join(''));
     }
   });
