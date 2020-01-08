@@ -40,43 +40,41 @@ a {
 }
 
 a:hover,
-a:focus,
-a.active{
+a:focus {
   color: #62c6f8;
 }
 
-.fl-left{
+.fl-left {
   float: left;
   box-sizing: border-box;
 }
 
-.fl-right{
+.fl-right {
   float: right;
   box-sizing: border-box;
 }
 
-.clr{
+.clr {
   content: "";
   clear: both;
   display: block;
 }
 
 .menu-nav ul,
-.menu-social ul{
+.menu-social ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 .menu-nav ul li,
-.menu-social ul li{
+.menu-social ul li {
   float: left;
 }
 
 .menu-nav ul li a,
-.menu-social ul li a{
+.menu-social ul li a {
   display: block;
   text-align: center;
   text-decoration: none;
 }
-

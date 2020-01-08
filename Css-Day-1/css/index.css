@@ -1,13 +1,12 @@
 @import url(utm-avo/fonts.css);
 @import url(style.css);
 
-.container{
+.container {
   width: 100%;
   padding: 0 180px;
 }
 
-
-.section-header{
+.section-header {
   display: flex;
   padding: 10px 0 15px;
 }
@@ -17,7 +16,6 @@
   flex-wrap: wrap;
   align-items: center;
 }
-
 
 .logo .content {
   padding-left: 15px ;
@@ -64,11 +62,11 @@
   border-bottom: 1px solid #e9e9e9;
 }
 
-.main-menu .menu-list{
+.main-menu .menu-list {
   background-color: #ffffff;
 }
 
-.main-menu .menu-item{
+.main-menu .menu-item {
   border-left: 1px solid #e9e9e9;
 }
 
@@ -76,39 +74,30 @@
   border-left: 0;
 }
 
-nav ul li a {
+.main-menu .menu-item-link {
   padding: 25px 20px;
   color: #8e8e8e;
   font-size: 12px;
 }
-
-nav ul li a:hover {
+.main-menu .active {
   color: #62c6f8;
 }
 
-/* nav ul li a {
-  padding: 25px 20px;
-  color: #8e8e8e;
-  font-size: 12px;
+.main-menu .menu-item-link:hover {
+  color: #62c6f8;
 }
 
-nav ul li a:hover {
-  color: #62c6f8;
-} */
-
-.menu-social ul li a{
+.menu-social ul li a {
   padding-right: 10px;
   line-height: 70px;
 }
 
-
-.section-banner{
+.section-banner {
   position: relative;
   background: url("../images/banner.jpg") top left no-repeat; 
   background-size: auto 100%;
   height: 160px;
 }
-
 
 .section-banner div {
   position: absolute;
@@ -120,7 +109,7 @@ nav ul li a:hover {
   font-size: 12px;
 }
 
-.page-main .main-content{
+.page-main .main-content {
   display: flex;
   flex-wrap: wrap;
   padding: 75px 0 40px;
@@ -137,20 +126,20 @@ nav ul li a:hover {
 }
 
 .aside-adults .title-adults,
-.aside-children .title-children{
+.aside-children .title-children {
   position: relative;
   padding: 20px;
   background: #d9e4e9;
   text-transform: uppercase;
 }
 
-.aside-adults .title-adults::after{
+.aside-adults .title-adults::after {
   position: absolute;
   content: '-';
   right: 21px;
 }
 
-.aside-children .title-children::after{
+.aside-children .title-children::after {
   position: absolute;
   content: '+';
   right: 21px;
@@ -161,18 +150,18 @@ nav ul li a:hover {
   background: #d9e4e9;
 }
 
-.aside-adults .nav-adults{
+.aside-adults .nav-adults {
   margin: 2px 20px 25px;
 }
 
-.nav-adults ul li{
+.nav-adults ul li {
   list-style-position: inside;
   list-style-type: disc;
   border-left: 0;
   margin-top: 21px;
 }
 
-.nav-adults li a{
+.nav-adults li a {
   padding: 0;
   font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -191,7 +180,7 @@ nav ul li a:hover {
   padding: 27px 20px;
 }
 
-.aside-form .title-form{
+.aside-form .title-form {
   padding-bottom: 22px;
   text-transform: uppercase;
   font-family: 'UTM-AVo',Arial, Helvetica, sans-serif;
@@ -215,19 +204,19 @@ nav ul li a:hover {
   font-size: 1rem;
 }
 
-.section-list{
+.section-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.services-item{
+.services-item {
   position: relative;
   width: 31.3333333%;
   margin: 0 0 2% 2%;
   border: 1px solid #ebebeb;
 }
 
-.services-item::after{
+.services-item::after {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -241,11 +230,11 @@ nav ul li a:hover {
 }
 
 .services-item .services-name,
-.services-item .services-content{
+.services-item .services-content {
   padding: 24px 0 0 24px;
 }
 
-.services-item .services-name{
+.services-item .services-name {
   font-size: 1rem;
   font-weight: bold;
 }
@@ -288,26 +277,26 @@ nav ul li a:hover {
 
 .section-about .content ul ,
 .section-support .content ul ,
-.section-connect .content ul{
+.section-connect .content ul {
   list-style-position: inside;
 }
 
 .section-about .content ul li,
 .section-support .content ul li,
-.section-connect .content ul li{
+.section-connect .content ul li {
   margin-top: 21px;
 }
 
-.section-connect .content ul{
+.section-connect .content ul {
   list-style-type: none;
 }
 
-.section-connect .content ul li a{
+.section-connect .content ul li a {
   display: flex;
   align-items: center;
 }
 
-.section-connect .content li a img{
+.section-connect .content li a img {
   margin-right: 9px;
 }
 
