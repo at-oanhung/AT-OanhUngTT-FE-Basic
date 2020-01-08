@@ -35,7 +35,6 @@ function ex3(s) {
   }
   
   if (sum %3 === 0) {
-<<<<<<< HEAD
     arr = arr0.map( function(i) {
       return s.replace("*", i)
     });
@@ -47,29 +46,17 @@ function ex3(s) {
     arr = arr2.map( function(i) {
       return s.replace("*", i)
     });
-=======
-    arr = arr0.map((i)=>s.replace("*", i));
-  } else if (sum %3 === 1) {
-    arr = arr1.map((i)=>s.replace("*", i));
-  } else {
-    arr = arr2.map((i)=>s.replace("*", i));
->>>>>>> 2b665f0... update errors
   }
   return arr;
 }
 
 function ex4(s) {
-<<<<<<< HEAD
   var arr1 = [];
   var a = ex3(s);
   arr1 = a.filter(function(i) {
     return Number(i.charAt(i.length - 1))%2 === 0;
   });
   return arr1;
-=======
-  var a = ex3(s);
-  return a.filter(i=>Number(i.charAt(i.length - 1))%2 === 0)
->>>>>>> 2b665f0... update errors
 }
 
 console.log("Ex1: " + ex1());
