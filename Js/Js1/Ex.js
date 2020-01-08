@@ -19,49 +19,37 @@ function ex2() {
   return c - a;
 }
 
-function Ex3(s) { 
-  var count = 0;
+function ex3(s) { 
+  console.log("Number: " + s);
   var sum = 0;
-  var index;
-  var arr = s.split('');
-  var options = ['0','1','2','3','4','5','6','7','8','9'];
-  var result = [];
+  var arr = [];  
+  var num = s.split('');
+  var arr0 = ['0', '3', '6', '9'];
+  var arr1 = ['2', '5', '8'];
+  var arr2 = ['1', '4', '7'];
 
-  options.forEach(function(n) {
-    arr.forEach(function(star, i) {
-      if (star === '*') {
-        index = i;
-      }
-    });
-    arr.splice(index, 1, n);
-
-    sum = 0;
-    arr.forEach(function(i) {
-      sum += Number(i);
-    })    
-
-    if (sum % 3 === 0) {
-      result.push(arr.join(''));
+  for (var i = 0; i < s.length; i++) {
+    if (s.charAt(i) !== "*") {
+      sum += Number(s.charAt(i));
     }
-  });
-  return result;
+  }
+  
+  if (sum %3 === 0) {
+    arr = arr0.map((i)=>s.replace("*", i));
+  } else if (sum %3 === 1) {
+    arr = arr1.map((i)=>s.replace("*", i));
+  } else {
+    arr = arr2.map((i)=>s.replace("*", i));
+  }
+  return arr;
 }
 
-function Ex4(s){
-  var a = [];  
-  var result = [];
-  a = Ex3(s);
-  console.log( a);
-  a.forEach(function(n) {
-    console.log( Number(a[n]) );
-    if ( Number(a[n]) % 2 === 0) {
-      result.push(arr.join(''));
-    }
-  });
-  return result;
+function ex4(s) {
+  var a = ex3(s);
+  return a.filter(i=>Number(i.charAt(i.length - 1))%2 === 0)
 }
 
 console.log("Ex1: " + ex1());
-console.log("Ex2 absolute difference is: " + ex2());
-console.log("Ex3  is: " +  Ex3('1234567890*') );
-console.log("Ex4  is: " +  Ex4('1234567890*') );
+console.log("Ex2: " + ex2());
+console.log("Ex3: " + ex3('1234567890*') );
+console.log("Ex4: " + ex4('1234567890*') );
