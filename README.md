@@ -1,1 +1,0 @@
-Copyright Thuy Oanh
