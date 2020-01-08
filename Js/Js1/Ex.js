@@ -35,18 +35,28 @@ function ex3(s) {
   }
   
   if (sum %3 === 0) {
-    arr = arr0.map((i)=>s.replace("*", i));
+    arr = arr0.map( function(i) {
+      return s.replace("*", i)
+    });
   } else if (sum %3 === 1) {
-    arr = arr1.map((i)=>s.replace("*", i));
+    arr = arr1.map( function(i) {
+      return s.replace("*", i)
+    });
   } else {
-    arr = arr2.map((i)=>s.replace("*", i));
+    arr = arr2.map( function(i) {
+      return s.replace("*", i)
+    });
   }
   return arr;
 }
 
 function ex4(s) {
+  var arr1 = [];
   var a = ex3(s);
-  return a.filter(i=>Number(i.charAt(i.length - 1))%2 === 0)
+  arr1 = a.filter(function(i) {
+    return Number(i.charAt(i.length - 1))%2 === 0;
+  });
+  return arr1;
 }
 
 console.log("Ex1: " + ex1());
