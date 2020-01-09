@@ -1,4 +1,5 @@
 @import url(utm-avo/fonts.css);
+@import url(utm-avobold/fonts.css);
 @import url(style.css);
 
 .container {
@@ -18,17 +19,18 @@
 }
 
 .logo .content {
-  padding-left: 15px ;
+  padding-left: 16px ;
   font-size: 16px;
 }
 
 .logo .content h1 {
-  font-family: 'UTM-Avo', Arial, Helvetica, sans-serif;
+  font-family: 'UTM-AVobold', Arial, Helvetica, sans-serif;
   font-size: 1.25em;
   text-transform: uppercase;
 }
 
 .logo .content p { 
+  margin-top: 4px;
   font-family: 'UTM-AVo', Arial, Helvetica, sans-serif;
   font-size: 1em;
 }
@@ -183,7 +185,7 @@
 .aside-form .title-form {
   padding-bottom: 22px;
   text-transform: uppercase;
-  font-family: 'UTM-AVo',Arial, Helvetica, sans-serif;
+  font-family: 'UTM-AVobold',Arial, Helvetica, sans-serif;
   text-align: left;
   font-size: 18px;
 }
@@ -200,7 +202,7 @@
   background-color: #4bbc56;
   color: #ffffff;
   text-transform: uppercase;
-  font-family: 'UTM-AVo',Arial, Helvetica, sans-serif;
+  font-family: 'UTM-AVobold',Arial, Helvetica, sans-serif;
   font-size: 1rem;
 }
 
