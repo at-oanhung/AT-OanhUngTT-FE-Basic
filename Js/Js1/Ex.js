@@ -20,7 +20,6 @@ function ex3(s) {
   console.log("Number: " + s);
   var sum = 0;
   var arr = [];  
-  var num = s.split('');
   var arr0 = ['0', '3', '6', '9'];
   var arr1 = ['2', '5', '8'];
   var arr2 = ['1', '4', '7'];
@@ -31,7 +30,7 @@ function ex3(s) {
     }
   }
   
-  if (sum % 3 === 0) {
+  if (!(sum % 3)) {
     arr = arr0.map(function(i) {
       return s.replace("*", i)
     });
