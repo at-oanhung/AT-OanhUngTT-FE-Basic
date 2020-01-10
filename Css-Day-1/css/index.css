@@ -4,12 +4,18 @@
 
 .container {
   width: 100%;
-  padding: 0 180px;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .section-header {
   display: flex;
   padding: 10px 0 15px;
+}
+
+.section-header > div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-left .logo {
@@ -101,9 +107,20 @@
   height: 160px;
 }
 
-.section-banner div {
+.section-banner .list-breadcrumb {
   position: absolute;
   top: 45%;
+  list-style-type: none;
+  display: flex;
+}
+
+.section-banner .breadcrumb-item::after {
+  content: "/";
+  padding: 0 17px;
+}
+
+.section-banner .breadcrumb-item:last-child::after{
+  content: "";
 }
 
 .section-banner a {
