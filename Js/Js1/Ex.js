@@ -1,7 +1,3 @@
-var a;
-var b;
-var c;
-
 function ex1(a, b) {
   if (a === b) {
     return 3 * (a + b);
