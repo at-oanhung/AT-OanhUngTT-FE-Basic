@@ -20,11 +20,11 @@ function showCart() {
                 '</td><td>' 
                 + product[cart[i].id].cost * cart[i].count + 
                 '</td><td>' 
-                + '<button onclick = "deleteCart(this)">X</button>' +
+                + '<button onclick = "deleteCart(this)"><i class="fas fa-trash-alt"></i></button>' +
                 '</td>'
                 + '<input class="js-id" type="hidden" value="' + cart[i].id + '">'+
                 '<td>' 
-                + '<button onclick = "updateCart(this)">Update</button>' +
+                + '<button onclick = "updateCart(this)"><i class="fas fa-user-edit"></i></button>' +
                 '</td></tr>';   
   }
   content += '<tr><td></td><td></td><td></td><td><b>Total:</b></td><td>' +
@@ -53,7 +53,13 @@ function updateCart(btn) {
   } else {
     alert("Ban nhap khong dung dinh dang!");
   }
+  location.reload();
 }
+
+// window.onload = function()
+// {
+//   deleteCart(btn);
+// };
 
 function deleteCart(btn) {
   var row = btn.parentElement.parentElement.querySelectorAll(".js-id")[0].value;
@@ -65,7 +71,8 @@ function deleteCart(btn) {
      cart.splice(i,1);
      i--; 
      localStorage.setItem("cart", JSON.stringify(cart));
-     alert("Update thanh cong");
+     alert("Delete thanh cong");
+     location.reload();
      break;
     }
   }

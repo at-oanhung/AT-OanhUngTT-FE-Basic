@@ -85,6 +85,7 @@
 .main-menu .menu-item-link {
   padding: 25px 20px;
   color: #8e8e8e;
+  text-transform: uppercase;
   font-size: 12px;
 }
 .main-menu .active {
@@ -102,9 +103,9 @@
 
 .section-banner {
   position: relative;
-  background: url("../images/banner.jpg") top left no-repeat; 
-  background-size: auto 100%;
-  height: 160px;
+  background: url("../images/product/banner.jpg") top left no-repeat; 
+  background-size: cover;
+  height: 230px;
 }
 
 .section-banner .list-breadcrumb {
@@ -138,7 +139,7 @@
   width: 100%;
 }
 
-.services-list {
+.product-list {
   display: flex;
   flex-wrap: wrap;
 }
@@ -187,11 +188,11 @@
 .services-item .services-content {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 13px;
-  height: 55px;
+  height: 75px;
 }
 
 .services-item .btn-add {
@@ -205,8 +206,15 @@
   text-transform: uppercase;
 }
 
+.btn-add:disabled,
+.btn-add[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .page-footer{
-  background-color: #62c6f8;
+  background-color: #421458;
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -282,4 +290,30 @@
 
 table, th, td {
   border: 1px solid black;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #000000;
+}
+
+th {
+  height: 60px;
+}
+
+td {
+  height: 40px;
+  padding: 15px;
+}
+
+td input {
+  width: 50px;
+  text-align: center;
+}
+
+td button {
+  background-color:#6b64ac;
+  padding: 10px;
 }
