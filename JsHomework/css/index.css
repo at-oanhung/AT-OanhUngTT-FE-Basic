@@ -58,7 +58,7 @@
 
 .header-right a {
   padding-left: 20px;
-  color: #4cc1fc;
+  color: #6b64ac;
   font-weight: bold;
   font-size: 18px;
 }
@@ -89,11 +89,11 @@
   font-size: 12px;
 }
 .main-menu .active {
-  color: #62c6f8;
+  color: #6b64ac;
 }
 
 .main-menu .menu-item-link:hover {
-  color: #62c6f8;
+  color: #6b64ac;
 }
 
 .menu-social ul li a {
@@ -199,7 +199,7 @@
   display: flex;
   margin: 0 auto 0.5rem;
   padding: 1rem;
-  background-color: #62c6f8;
+  background-color: #6b64ac;
   border: 0;
   font-size: 1rem;
   text-align: center;
