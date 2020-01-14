@@ -317,3 +317,8 @@ td button {
   background-color:#6b64ac;
   padding: 10px;
 }
+
+td img {
+  width: 100px;
+  height: 100px;
+}

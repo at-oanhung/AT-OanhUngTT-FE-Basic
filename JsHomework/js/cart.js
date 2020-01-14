@@ -1,7 +1,7 @@
-var result = document.getElementById('js-cart');
+var resultInf = document.getElementById('js-cart');
 
 function showCart() {
-  var content = '<table><tr><th>#</th><th>Name</th><th>Quatity</th>'+
+  var content = '<table><tr><th>#</th><th>Images</th><th>Name</th><th>Quatity</th>'+
                 '<th>Price</th><th>Sub Total</th><th></th><th></th></tr>';
   
   cart = JSON.parse(localStorage.getItem('cart'));
@@ -10,7 +10,9 @@ function showCart() {
 
   for (var i = 0; i < cart.length; i++) {
     sum += product[cart[i].id].cost * cart[i].count;
-    content += '<tr><td>' + i + '</td><td>' 
+    content += '<tr><td>' + i + '</td><td><img src= "' 
+                + product[cart[i].id].img + 
+                ' "></td><td>' 
                 + product[cart[i].id].name + 
                 '</td><td><input class="js-count" type="text" value="'
                 + cart[i].count +
@@ -29,7 +31,7 @@ function showCart() {
   }
   content += '<tr><td></td><td></td><td></td><td><b>Total:</b></td><td>' +
               sum + '</td><td></td><td></td></tr></table>';
-  result.innerHTML = content;
+  resultInf.innerHTML = content;
 }
 
 showCart();
@@ -54,12 +56,8 @@ function updateCart(btn) {
     alert("Ban nhap khong dung dinh dang!");
   }
   location.reload();
+  // numberCart();
 }
-
-// window.onload = function()
-// {
-//   deleteCart(btn);
-// };
 
 function deleteCart(btn) {
   var row = btn.parentElement.parentElement.querySelectorAll(".js-id")[0].value;
@@ -71,9 +69,10 @@ function deleteCart(btn) {
      cart.splice(i,1);
      i--; 
      localStorage.setItem("cart", JSON.stringify(cart));
-     alert("Delete thanh cong");
-     location.reload();
+     alert("Delete thanh cong");  
+     numberCart();
      break;
     }
   }
+  location.reload();
 }
