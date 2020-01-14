@@ -46,10 +46,8 @@ function addCart(id) {
       else if (i === (cart.length -1)){
         cart.push({id: row, count: count});
         break;
-      }
-      
+      }    
     }
-    
   } else {
     cart = [];
     cart.push({id: row, count: count});

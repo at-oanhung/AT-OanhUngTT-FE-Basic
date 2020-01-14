@@ -2,7 +2,7 @@ var resultInf = document.getElementById('js-cart');
 
 function showCart() {
   var content = '<table><tr><th>#</th><th>Images</th><th>Name</th><th>Quatity</th>'+
-                '<th>Price</th><th>Sub Total</th><th></th><th></th></tr>';
+                '<th>Price</th><th>Sub Total</th><th>Delete</th><th>Update</th></tr>';
   
   cart = JSON.parse(localStorage.getItem('cart'));
   product = JSON.parse(localStorage.getItem('product'));
@@ -30,7 +30,7 @@ function showCart() {
                 '</td></tr>';   
   }
   content += '<tr><td></td><td></td><td></td><td><b>Total:</b></td><td>' +
-              sum + '</td><td></td><td></td></tr></table>';
+              sum + '</td><td></td><td></td><td></td></tr></table>';
   resultInf.innerHTML = content;
 }
 

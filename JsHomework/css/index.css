@@ -206,6 +206,10 @@
   text-transform: uppercase;
 }
 
+.services-item .btn-add:hover{
+  background-color: #999999;
+}
+
 .btn-add:disabled,
 .btn-add[disabled]{
   border: 1px solid #999999;
@@ -297,6 +301,26 @@ table {
   justify-content: center;
   width: 100%;
   color: #000000;
+}
+
+table th:first-child{
+  width: 4rem;
+}
+
+table th:nth-child(2){
+  width: 10rem;
+}
+
+table th:nth-child(3){
+  width: 20rem;
+}
+
+table th:nth-child(4),
+table th:nth-child(5),
+table th:nth-child(6),
+table th:nth-child(7),
+table th:nth-child(8) {
+  width: 7rem;
 }
 
 th {
