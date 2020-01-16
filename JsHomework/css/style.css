@@ -30,6 +30,10 @@ summary {
   display: block;
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   color: #000000;
   text-decoration: none;
