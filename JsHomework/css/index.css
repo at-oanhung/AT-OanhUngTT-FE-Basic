@@ -1,5 +1,5 @@
-@import url(utm-avo/fonts.css);
-@import url(utm-avobold/fonts.css);
+/* @import url(utm-avo/fonts.css);
+@import url(utm-avobold/fonts.css); */
 @import url(style.css);
 
 .container {
@@ -78,7 +78,7 @@
   border-left: 1px solid #e9e9e9;
 }
 
-.main-menu .menu-item:first-child{
+.main-menu .menu-item:first-child {
   border-left: 0;
 }
 
@@ -120,7 +120,7 @@
   padding: 0 17px;
 }
 
-.section-banner .breadcrumb-item:last-child::after{
+.section-banner .breadcrumb-item:last-child::after {
   content: "";
 }
 
@@ -142,6 +142,8 @@
 .product-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 0;
 }
 
 .services-item {
@@ -151,7 +153,7 @@
   border: 1px solid #ebebeb;
 }
 
-.services-img img{
+.services-img img {
   width: 100%;
   height: 290px;
 }
@@ -206,12 +208,12 @@
   text-transform: uppercase;
 }
 
-.services-item .btn-add:hover{
+.services-item .btn-add:hover {
   background-color: #999999;
 }
 
 .btn-add:disabled,
-.btn-add[disabled]{
+.btn-add[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
@@ -242,7 +244,7 @@
   margin-bottom: 7px;
 }
 
-.section-footer .content a{
+.section-footer .content a {
   font-size: 1em;
   text-transform: uppercase;
   color: #ffffff;
@@ -292,39 +294,37 @@
   font-size: 1em;
 }
 
+.section-content h2 {
+  padding: 15px 10px;
+  border-bottom: 1px solid #e9e9e9;
+  font-size: 2rem;
+  color: #6b64ac;
+}
+
 table, th, td {
   border: 1px solid black;
 }
 
 table {
-  display: flex;
-  justify-content: center;
+  table-layout: fixed;
   width: 100%;
   color: #000000;
 }
-
-table th:first-child{
+table th:first-child {
   width: 4rem;
 }
 
-table th:nth-child(2){
+table th:nth-child(2) {
   width: 10rem;
 }
 
-table th:nth-child(3){
+table th:nth-child(3) {
   width: 20rem;
-}
-
-table th:nth-child(4),
-table th:nth-child(5),
-table th:nth-child(6),
-table th:nth-child(7),
-table th:nth-child(8) {
-  width: 7rem;
 }
 
 th {
   height: 60px;
+  background-color: #6b64ac;
 }
 
 td {
@@ -340,6 +340,12 @@ td input {
 td button {
   background-color:#6b64ac;
   padding: 10px;
+  border: 0;
+}
+
+.btn-delete i,
+.btn-update i {
+ pointer-events: none;
 }
 
 td img {
