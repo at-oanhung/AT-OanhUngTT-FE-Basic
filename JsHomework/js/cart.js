@@ -10,6 +10,7 @@ function showCart() {
 
   //Handle 
   var tbody = null;
+  var thead = null;
   var temp = null;
   var tr = null;
   var table = null;
@@ -20,7 +21,11 @@ function showCart() {
 
   resultInf.innerHTML = '';
 
-  tbody = document.createElement('tbody');
+  table = document.createElement('table');
+  table.id = "js-table";
+  table.classList = 'table table-cart';
+
+  thead = document.createElement('thead');
   tr = document.createElement('tr');
 
   temp = document.createElement('th');
@@ -54,11 +59,11 @@ function showCart() {
   temp = document.createElement('th');
   temp.innerHTML = 'Update';
   tr.appendChild(temp);
+  thead.appendChild(tr);
+  table.appendChild(thead);
 
-  tbody.appendChild(tr);  
+  tbody = document.createElement('tbody');
 
-  table = document.createElement('table');
-  table.id = "js-table";
   
   var sum = 0;
   
@@ -131,19 +136,16 @@ function showCart() {
         btn.appendChild(iEl);
         temp.appendChild(btn);
         tr.appendChild(temp);
-        tbody.appendChild(tr);
+        tbody.appendChild(tr);  
       }
     }
   }
 
   tr = document.createElement('tr');
+  tr.classList = 'table table-cart';
+  
   temp = document.createElement('td');
-  tr.appendChild(temp);
-  temp = document.createElement('td');
-  tr.appendChild(temp);
-  temp = document.createElement('td');
-  tr.appendChild(temp);
-  temp = document.createElement('td');
+  temp.setAttribute('colspan', '4');
   tr.appendChild(temp);
 
   temp = document.createElement('td');
@@ -157,13 +159,11 @@ function showCart() {
   
   tr.appendChild(temp);
   temp = document.createElement('td');
-  tr.appendChild(temp);
-  temp = document.createElement('td');
+  temp.setAttribute('colspan', '2');
   tr.appendChild(temp);
 
-
-  tbody.appendChild(tr)
-  table.appendChild(tbody)
+  tbody.appendChild(tr);
+  table.appendChild(tbody);
   resultInf.appendChild(table);
 
   console.log(resultInf);

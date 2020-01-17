@@ -73,8 +73,8 @@ function addCart(event) {
   var cart = JSON.parse(localStorage.getItem('cart'));
   var count = 1;
   var row = event.target.dataset.id;
-  if (cart) {
-    if (cart.length > 0) { 
+  if (cart && cart.length) {
+    // if (cart.length > 0) { 
       for (var i = 0; i < cart.length; i++) {
         console.log(cart[i]['id']);
         if (+row === cart[i]['id']) {
@@ -86,9 +86,9 @@ function addCart(event) {
           break;
         }    
       }
-    } else {
-      cart.push({id: +row, count: count});
-    }
+    // } else {
+    //   cart.push({id: +row, count: count});
+    // }
   } else {
     cart = [];
     cart.push({id: +row, count: count});
