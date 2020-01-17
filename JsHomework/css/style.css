@@ -82,3 +82,22 @@ a:focus {
   text-align: center;
   text-decoration: none;
 }
+
+.btn-primary {
+  display: flex;
+  margin: 0 auto 0.5rem;
+  padding: 1rem;
+  background-color: #a11fb9;
+  border: 0;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background-color: #999999;
+}
+
+.btn-primary i {
+ pointer-events: none;
+}

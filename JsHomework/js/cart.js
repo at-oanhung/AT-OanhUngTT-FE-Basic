@@ -1,4 +1,4 @@
-var resultInf = document.getElementById('js-cart');
+var CartEl = document.getElementById('js-cart');
 var product = JSON.parse(localStorage.getItem('product'));
 
 function showCart() {
@@ -9,198 +9,206 @@ function showCart() {
   }
 
   //Handle 
-  var tbody = null;
-  var thead = null;
-  var temp = null;
-  var tr = null;
-  var table = null;
-  var btn = null;
-  var input = null;
-  var b = null;
-  var iEl = null;
+  var tbodyEl;
+  var theadEl;
+  var tempEl;
+  var trEl;
+  var tableEl;
+  var btnEl;
+  var inputEl;
+  var bEl;
+  var iEl;
 
-  resultInf.innerHTML = '';
+  CartEl.innerHTML = '';
 
-  table = document.createElement('table');
-  table.id = "js-table";
-  table.classList = 'table table-cart';
+  tableEl = document.createElement('table');
+  // table.id = "js-table";
+  tableEl.classList = 'table table-cart';
 
-  thead = document.createElement('thead');
-  tr = document.createElement('tr');
+  theadEl = document.createElement('thead');
+  trEl = document.createElement('tr');
 
-  temp = document.createElement('th');
-  temp.innerHTML = '#';
-  tr.appendChild(temp);
+  tempEl = document.createElement('th');
+  tempEl.innerHTML = '#';
+  trEl.appendChild(tempEl);
 
-  temp = document.createElement('th');
-  temp.innerHTML = 'Images';
-  tr.appendChild(temp);
+  tempEl = document.createElement('th');
+  tempEl.innerHTML = 'Images';
+  trEl.appendChild(tempEl);
 
-  temp = document.createElement('th');
-  temp.innerHTML = 'Name';
-  tr.appendChild(temp);
+  tempEl = document.createElement('th');
+  tempEl.innerHTML = 'Name';
+  trEl.appendChild(tempEl);
 
-  temp = document.createElement('th');
-  temp.innerHTML = 'Quantity';
-  tr.appendChild(temp);
+  tempEl = document.createElement('th');
+  tempEl.innerHTML = 'Quantity';
+  trEl.appendChild(tempEl);
 
-  temp = document.createElement('th')
-  temp.innerHTML = 'Price';
-  tr.appendChild(temp);
+  tempEl = document.createElement('th')
+  tempEl.innerHTML = 'Price';
+  trEl.appendChild(tempEl);
 
-  temp = document.createElement('th')
-  temp.innerHTML = 'Sub-total';
-  tr.appendChild(temp);
+  tempEl = document.createElement('th')
+  tempEl.innerHTML = 'Sub-total';
+  trEl.appendChild(tempEl);
   
-  temp = document.createElement('th')
-  temp.innerHTML = 'Delete';
-  tr.appendChild(temp);
+  tempEl = document.createElement('th')
+  tempEl.innerHTML = 'Delete';
+  trEl.appendChild(tempEl);
 
-  temp = document.createElement('th');
-  temp.innerHTML = 'Update';
-  tr.appendChild(temp);
-  thead.appendChild(tr);
-  table.appendChild(thead);
+  tempEl = document.createElement('th');
+  tempEl.innerHTML = 'Update';
+  trEl.appendChild(tempEl);
+  theadEl.appendChild(trEl);
+  tableEl.appendChild(theadEl);
 
-  tbody = document.createElement('tbody');
+  tbodyEl = document.createElement('tbody');
 
-  
   var sum = 0;
   
   for (var i = 0; i < cart.length; i++) {
     for (var j = 0; j < product.length; j++) {
-      if (cart[i].id === product[j].id){
+      if (cart[i].id === product[j].id) {
         var subtotal = product[j].cost * cart[i].count;
         sum += subtotal;
-        tr = document.createElement('tr');
+        trEl = document.createElement('tr');
 
-        temp = document.createElement('td');
-        temp.innerHTML = (i + 1);
-        tr.appendChild(temp);
+        tempEl = document.createElement('td');
+        tempEl.innerHTML = (i + 1);
+        trEl.appendChild(tempEl);
 
-        temp = document.createElement('td');
-        tr.appendChild(temp);
-        images = document.createElement("img");
-        images.src = product[j].img;
-        temp.appendChild(images);
+        tempEl = document.createElement('td');
+        trEl.appendChild(tempEl);
 
-        temp = document.createElement('td');
-        temp.innerHTML = product[j].name;
-        tr.appendChild(temp);
+        imagesEl = document.createElement("img");
+        imagesEl.src = product[j].img;
+        imagesEl.setAttribute('alt', 'cart images');
+        tempEl.appendChild(imagesEl);
 
-        temp = document.createElement('td');
+        tempEl = document.createElement('td');
+        tempEl.innerHTML = product[j].name;
+        trEl.appendChild(tempEl);
+
+        tempEl = document.createElement('td');
         
-        input = document.createElement('input');
+        inputEl = document.createElement('input');
         // input.classList = "js-count";
-        input.type = "text";
-        input.value = cart[i].count;
-        input.id = 'js-update-' + product[j].id;
-        temp.appendChild(input);
+        inputEl.type = "text";
+        inputEl.value = cart[i].count;
+        inputEl.id = 'js-update-' + product[j].id;
+        tempEl.appendChild(inputEl);
 
-        tr.appendChild(temp);
+        trEl.appendChild(tempEl);
 
-        temp = document.createElement('td');
-        temp.innerHTML = product[j].cost;
-        tr.appendChild(temp);
+        tempEl = document.createElement('td');
+        tempEl.innerHTML = '$' + product[j].cost;
+        trEl.appendChild(tempEl);
 
-        temp = document.createElement('td');
-        temp.innerHTML = subtotal;
-        tr.appendChild(temp);
+        tempEl = document.createElement('td');
+        tempEl.innerHTML = '$' + subtotal;
+        trEl.appendChild(tempEl);
 
         // Delete
-        temp = document.createElement('td');
-        btn = document.createElement("button");
-        btn.type = "button";
-        // btn.innerHTML = "X";
-        btn.classList.add("btn-delete");
-        btn.dataset.id = product[j].id;
-        btn.addEventListener('click', deleteCart);
+        tempEl = document.createElement('td');
+        btnEl = document.createElement("button");
+        btnEl.type = "button";
+        btnEl.classList.add("btn-primary");
+        btnEl.dataset.id = product[j].id;
+        btnEl.addEventListener('click', deleteCart);
 
         iEl = document.createElement('i');
         iEl.classList = "fas fa-trash-alt";
-        btn.appendChild(iEl);
-        temp.appendChild(btn);
-        tr.appendChild(temp);
+        btnEl.appendChild(iEl);
+        tempEl.appendChild(btnEl);
+        trEl.appendChild(tempEl);
 
         // Update
-        temp = document.createElement('td');
-        btn = document.createElement("button");
-        btn.type = "button";
+        tempEl = document.createElement('td');
+        btnEl = document.createElement("button");
+        btnEl.type = "button";
         // btn.innerHTML = "Update";
-        btn.classList.add("btn-update");
-        btn.dataset.id = product[j].id;
-        btn.addEventListener('click', updateCart);
+        btnEl.classList.add("btn-primary");
+        btnEl.dataset.id = product[j].id;
+        btnEl.addEventListener('click', updateCart);
 
         iEl = document.createElement('i');
         iEl.classList = "fas fa-user-edit";
-        btn.appendChild(iEl);
-        temp.appendChild(btn);
-        tr.appendChild(temp);
-        tbody.appendChild(tr);  
+        btnEl.appendChild(iEl);
+        tempEl.appendChild(btnEl);
+        trEl.appendChild(tempEl);
+        tbodyEl.appendChild(trEl);  
       }
     }
   }
 
-  tr = document.createElement('tr');
-  tr.classList = 'table table-cart';
+  trEl = document.createElement('tr');
   
-  temp = document.createElement('td');
-  temp.setAttribute('colspan', '4');
-  tr.appendChild(temp);
+  tempEl = document.createElement('td');
+  tempEl.setAttribute('colspan', '4');
+  trEl.appendChild(tempEl);
 
-  temp = document.createElement('td');
-  tr.appendChild(temp);
-  b = document.createElement('b');
-  b.innerHTML = 'Total: ';
-  temp.appendChild(b);
+  tempEl = document.createElement('td');
+  trEl.appendChild(tempEl);
+  bEl = document.createElement('b');
+  bEl.innerHTML = 'Total: ';
+  tempEl.appendChild(bEl);
   
-  temp = document.createElement('td');
-  temp.innerHTML = sum;
+  tempEl = document.createElement('td');
+  tempEl.innerHTML = '$' + sum;
+  trEl.appendChild(tempEl);
   
-  tr.appendChild(temp);
-  temp = document.createElement('td');
-  temp.setAttribute('colspan', '2');
-  tr.appendChild(temp);
+  tempEl = document.createElement('td');
+  tempEl.setAttribute('colspan', '2');
+  trEl.appendChild(tempEl);
 
-  tbody.appendChild(tr);
-  table.appendChild(tbody);
-  resultInf.appendChild(table);
+  tbodyEl.appendChild(trEl);
+  tableEl.appendChild(tbodyEl);
+  CartEl.appendChild(tableEl);
 
-  console.log(resultInf);
+  console.log(CartEl);
 }
 
 showCart();
 
+/**
+ * Click on 'icon Delete' button
+ * @method deleteCart
+ * @param {*} [cart]
+ */
 function deleteCart(e) {
-  var cart = JSON.parse(localStorage.getItem("cart"));
-  var rowDe = +e.target.dataset.id;
+  var cart = JSON.parse(localStorage.getItem('cart'));
+  var rowDe = + e.target.dataset.id;
   console.log(rowDe);
   for (var i = 0; i < cart.length; i++) {
-    if (cart[i].id == rowDe) {
+    if (cart[i].id === rowDe) {
       console.log(cart[i].id);
       cart.splice(i,1);
       // i--; 
-      localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem('cart', JSON.stringify(cart));
       alert("Delete thanh cong");   
       numberCart();     
       showCart();
-      // location.reload();
       break;
     }
   }
 }
 
+/**
+ * Click on 'icon Update' button
+ * @method updateCart
+ * @param {*} [cart]
+ */
 function updateCart(event) {
-  var row = event.target.dataset.id;
+  var row = + event.target.dataset.id;
   var count = document.getElementById('js-update-' + row).value;
   console.log(count);
   if (count > 0 && (Math.ceil(count)-count === 0)) {
-    var cart = JSON.parse(localStorage.getItem("cart"));
+    var cart = JSON.parse(localStorage.getItem('cart'));
     for (var i = 0 ; i < cart.length; i++) {
-      if (cart[i].id == row) {
+      if (cart[i].id === row) {
         console.log(cart[i].id);
         cart[i].count = count; 
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem('cart', JSON.stringify(cart));
         alert("Update thanh cong");
         showCart();
         break;

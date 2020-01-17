@@ -64,11 +64,16 @@ var product = [
   }
 ];
 
-var resultCart = document.getElementById('js-numbercart');
+var resultCart = document.getElementById('js-number-cart');
 
 // localStorage.product = JSON.stringify(product);
-localStorage.setItem("product", JSON.stringify(product));
+localStorage.setItem('product', JSON.stringify(product));
 
+
+/**
+ * Output number cart -> icon cart
+ * @method numberCart
+ */
 function numberCart() {
   var cart = JSON.parse(localStorage.getItem('cart'));
   var number = 0;
