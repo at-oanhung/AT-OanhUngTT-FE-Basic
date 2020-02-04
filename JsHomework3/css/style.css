@@ -1,0 +1,99 @@
+* ,*:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  position: relative;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
+}
+
+a:hover,
+a:focus {
+  color: #62c6f8;
+}
+
+.fl-left {
+  float: left;
+  box-sizing: border-box;
+}
+
+.fl-right {
+  float: right;
+  box-sizing: border-box;
+}
+
+.clr {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.btn-primary {
+  /*display: flex;*/
+  margin: 0 auto 0.5rem;
+  padding: 1rem;
+  background-color: #a11fb9;
+  border: 0;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background-color: #999999;
+}
+
+.btn-primary i {
+ pointer-events: none;
+}
+
+.btn-second {
+  background-color: #ffffff;
+  color: #868282;
+  border: 0;
+}
+
+.btn-second:hover,
+.btn-second:focus {
+  color: #a11fb9;
+}
+
+img {
+  /*width: 100%;  */
+}
