@@ -7,25 +7,32 @@ function renderComment() {
   if (!comment) {
     comment = [];
   }
+  var article = JSON.parse(localStorage.getItem('article'));
+  if (!article) {
+    article = [];
+  }
 
   //Handle 
   listCommentEl.innerHTML = '';
-  var content = "";
+  var content = '';
   if (comment.length) {
-    for (var i = 0; i < comment.length; i++) {         
-      content += '<li class="comment-item">' + 
-                    '<a href="#" class="comment-item-avartar">' +
-                      '<img src="images/avartar.png" alt="Avartar">' +
-                    '</a>' +
-                    '<div class="comment-item-inf">' + 
-                      '<span class="comment-item-username clr">Oanh Thuy</span>' +
-                      '<span class="comment-item-cmt clr js-content"> ' + comment[i].content + '</span>' +
-                      '<button type="button" class="btn-second delete" data-id="' + comment[i].id +'" id="js-delete-cm">Delete</button>' +
-                    '</div>' + 
-                  '<li>';
+    for (var i = 0; i < comment.length; i++) { 
+      if (comment[i].isDelete === false) {
+        content += '<li class="comment-item">' + 
+                      '<a href="#" class="comment-item-avartar">' +
+                        '<img src="' + comment[i].user.avartar + '" alt="Avartar">' +
+                      '</a>' +
+                      '<div class="comment-item-inf">' + 
+                        '<span class="comment-item-username clr">' + comment[i].user.name + '</span>' +
+                        '<span class="comment-item-cmt clr js-content">' + comment[i].content + '</span>' +
+                        '<button type="button" class="btn-second delete js-delete-cm" data-id="' + comment[i].id +'" id="a">Delete</button>' +
+                      '</div>' + 
+                    '<li>';
+      }    
     }
   }
   listCommentEl.innerHTML = content;
+  deleteComment();
 }
 
 function renderForm() {
@@ -43,7 +50,7 @@ function renderForm() {
 }
 
 renderComment();
-renderForm(); 
+renderForm();
 
 var add = document.getElementById("js-add-cm");
 add.addEventListener("click", function(){
@@ -54,19 +61,46 @@ add.addEventListener("click", function(){
   }
 
   var row = document.getElementById('js-input').value;
-  if (row === ""){
-    alert("Bạn chưa nhập Comment");  
+  if (row === ''){
+    alert('You have not entered a comment. Error!');  
   } else {
-    // var id = 0;
+    var id = 1;
+    var isDelete = false;
+    var idArticle = 1;
     if (comment && comment.length) {
       for (var i = 0; i < comment.length; i++) {
-        if (i === (comment.length -1)) {
-          comment.push({id: comment.length, content: row}); 
+        console.log("i" + i);
+        id = i + 1;
+        console.log("id" + id);
+        if (id === comment.id){
+          continue;
+        } else if (id === (comment.length)) {
+          comment.push({
+            id: (id + 1), 
+            content: row, 
+            isDelete: isDelete, 
+            idArticle: idArticle,
+            user: {
+              id: 1,
+              name: 'Oanh Thuy',
+              avartar: 'images/avartar.png',
+            }
+          });
           break;
-        }
+        } 
       }
     } else {
-      comment.push({id: 0, content: row});
+      comment.push({
+        id: id, 
+        content: row, 
+        isDelete: isDelete, 
+        idArticle: idArticle,
+        user: {
+          id: 1,
+          name: 'Oanh Thuy',
+          avartar: 'images/avartar.png',
+        }
+      });
     }
   }
   console.log(comment);
@@ -76,24 +110,24 @@ add.addEventListener("click", function(){
   renderComment();
 });
 
-document.getElementById("js-delete-cm").addEventListener("click", deleteComment);
 
-function deleteComment(event) {
+function deleteComment() {
   var comment = JSON.parse(localStorage.getItem('listComment'));
-  var rowDe = + event.target.dataset.id;
-  console.log(typeof rowDe);
-  for (var i = 0; i < comment.length; i++) {
-    console.log(typeof comment[i].id);
-    if (rowDe === comment[i].id) {
-      // console.log('cm-content: '  + comment[i].content);
-      comment.splice(comment[i],1);
-      // i--; 
-      localStorage.setItem('listComment', JSON.stringify(comment));
-      alert("Delete thanh cong");   
-      renderComment();
-      break;
-    } else {
-      alert("Delete k thanh cong");  
-    }
+  var clickDelete = document.getElementsByClassName("js-delete-cm");
+  console.log(clickDelete);
+  for (var i = 0; i < clickDelete.length; i++) {
+    console.log(clickDelete[i]);
+    clickDelete[i].addEventListener("click", function() {
+      var rowDe = + this.dataset.id;
+      console.log(rowDe);
+      for (var i = 0; i < comment.length; i++) {
+        if (rowDe === comment[i].id) {
+          comment[i].isDelete = true;
+          localStorage.setItem('listComment', JSON.stringify(comment));
+          alert('Delete sussces!');   
+          renderComment();
+        }
+      }
+    });    
   }
 }

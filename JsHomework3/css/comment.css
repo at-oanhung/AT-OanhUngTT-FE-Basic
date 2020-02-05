@@ -78,36 +78,39 @@
 
 .article-new .section-content {
   padding: 20px;
-  display: flex;
+  /*display: flex;*/
   /*justify-content: space-around;*/
 }
 
 .article-new .section-content > img {
-  height: 500px;
+  display: flex;
+  margin: 0 auto;
+  height: 300px;
+  /*width: 35%;*/
 }
 
 .article-new .content-new {
-  position: relative;
+  /*position: relative;*/
   padding: 20px;
 }
 
 .article-new .share-new {
-  position: absolute;
+/*  position: absolute;
   left: 45%;
-  bottom: 30px;
+  bottom: 30px;*/
   text-align: center;
-}
-
-.share-new .share-list {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .share-new .share-title {
   color: #762b90;
+}
+
+.share-new .share-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .share-new .share-item {
@@ -121,6 +124,7 @@
 .article-new .comment-title {
   font-weight: 700px;
   font-size: 20px;
+  color: #762b90;
 }
 
 .article-new .comment-list {
@@ -147,6 +151,7 @@
 }
 
 .comment-item-inf input {
+  padding-left: 10px;
   height: 50px;
   width: 100%;
 }
@@ -159,9 +164,13 @@
 
 .comment-item-username {
   font-weight: bold;
+  color: #000000;
+  font-size: 1.05rem;
 }
 
-
+.comment-item-cmt  {
+  color: #000000;
+}
 
 
 .page-footer .container{
@@ -226,7 +235,7 @@
   flex-wrap: wrap;
   border-top: 1px solid #9981f9;
   text-transform: uppercase;
-  padding: 23px 0;
+  padding: 23px 40px;
   font-size: 1em;
 }
 
