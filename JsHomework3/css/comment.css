@@ -6,6 +6,19 @@
   margin: 0 auto;
 }
 
+.page-header {
+/*  position: fixed;
+  width: 100%;
+  background-color: #ffffff;*/
+  border-bottom: 1px solid #bababa;    
+  /*box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);*/
+  /*z-index: 1;*/
+}
+
+.page-main {
+  /*padding-top: 150px;*/
+}
+
 .page-header .container {
   display: flex;
   justify-content: space-between;
@@ -57,8 +70,8 @@
 }
 
 .page-main .container {
-  /*display: flex;*/
-  /*padding: 20px;  */
+  display: flex;
+  padding: 20px;  
   /*background-color: #b7f5af;  */
 }
 
@@ -67,13 +80,13 @@
 }  
 
 .article-new .title-new {
-  padding: 20px;
+  padding: 25px;
   font-size: 2rem;
   font-weight: bold;
   font-style: italic;
   color: #762b90;
-  border: solid #555555;
-  border-width: 1px 0;
+  /*border-top: 1px solid #555555;*/
+  /*border-width: 1px 0;*/
 }
 
 .article-new .section-content {
@@ -92,6 +105,14 @@
 .article-new .content-new {
   /*position: relative;*/
   padding: 20px;
+}
+
+.article-new .content-describe {
+  text-align: center;
+}
+
+.article-new .content-title {
+  padding: 10px 0;
 }
 
 .article-new .share-new {
@@ -152,14 +173,16 @@
 
 .comment-item-inf input {
   padding-left: 10px;
+  margin: 10px 0;
   height: 50px;
   width: 100%;
 }
 
-.comment-item-inf .add {
+.comment-item-inf .btn-add {
   position: absolute;
   right: 0;
   top: 0;
+  margin-top: 10px;
 }
 
 .comment-item-username {
@@ -183,7 +206,6 @@
   display: flex;
   flex-wrap: wrap;
   padding: 50px 40px;
-  /*padding: 50px 0 40px;*/
   font-size: 12px;
 }
 

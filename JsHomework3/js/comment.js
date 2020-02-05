@@ -1,6 +1,11 @@
 var listCommentEl = document.getElementById('js-list-comment');
 var formCommentEl = document.getElementById('js-form-comment');
 
+/*
+* @method renderComment
+* add Delete event for the button
+* ktra status Delete: showComment (if isDelete: false)
+*/
 function renderComment() {
   //get Ls
   var comment = JSON.parse(localStorage.getItem('listComment'));
@@ -19,15 +24,15 @@ function renderComment() {
     for (var i = 0; i < comment.length; i++) { 
       if (comment[i].isDelete === false) {
         content += '<li class="comment-item">' + 
-                      '<a href="#" class="comment-item-avartar">' +
-                        '<img src="' + comment[i].user.avartar + '" alt="Avartar">' +
-                      '</a>' +
-                      '<div class="comment-item-inf">' + 
-                        '<span class="comment-item-username clr">' + comment[i].user.name + '</span>' +
-                        '<span class="comment-item-cmt clr js-content">' + comment[i].content + '</span>' +
-                        '<button type="button" class="btn-second delete js-delete-cm" data-id="' + comment[i].id +'" id="a">Delete</button>' +
-                      '</div>' + 
-                    '<li>';
+        '<a href="#" class="comment-item-avartar">' +
+        '<img src="' + comment[i].user.avartar + '" alt="Avartar">' +
+        '</a>' +
+        '<div class="comment-item-inf">' + 
+        '<span class="comment-item-username clr">' + comment[i].user.name + '</span>' +
+        '<span class="comment-item-cmt clr js-content">' + comment[i].content + '</span>' +
+        '<button type="button" class="btn-second delete js-delete-cm" data-id="' + comment[i].id +'" id="a">Delete</button>' +
+        '</div>' + 
+        '<li>';
       }    
     }
   }
@@ -38,85 +43,94 @@ function renderComment() {
 function renderForm() {
   var contentForm = "";
   contentForm+= '<li class="comment-item">' + 
-                  '<a href="#" class="comment-item-avartar">' +
-                    '<img src="images/avartar.png" alt="Avartar">' +
-                  '</a>' +
-                  '<form class="comment-item-inf">' + 
-                    '<input type="text" name="comment" placeholder="Comment" id="js-input">' +
-                    '<button type="button" class="btn-primary add" id="js-add-cm">+</button>' +
-                  '</form>' + 
-                '<li>';
+  '<a href="#" class="comment-item-avartar">' +
+  '<img src="images/avartar.png" alt="Avartar">' +
+  '</a>' +
+  '<form class="comment-item-inf" method="post">' + 
+  '<input type="text" name="comment" placeholder="Comment" id="js-input">' +
+  '<button type="button" class="btn-primary btn-add" id="js-add-cm">+</button>' +
+  '</form>' + 
+  '<li>';
   formCommentEl.innerHTML = contentForm;
 }
 
 renderComment();
 renderForm();
+addComment();
 
-var add = document.getElementById("js-add-cm");
-add.addEventListener("click", function(){
-  //get Ls
-  var comment = JSON.parse(localStorage.getItem('listComment'));
-  if (!comment) {
-    comment = [];
-  }
-
-  var row = document.getElementById('js-input').value;
-  if (row === ''){
-    alert('You have not entered a comment. Error!');  
-  } else {
-    var id = 1;
-    var isDelete = false;
-    var idArticle = 1;
-    if (comment && comment.length) {
-      for (var i = 0; i < comment.length; i++) {
-        console.log("i" + i);
-        id = i + 1;
-        console.log("id" + id);
-        if (id === comment.id){
-          continue;
-        } else if (id === (comment.length)) {
-          comment.push({
-            id: (id + 1), 
-            content: row, 
-            isDelete: isDelete, 
-            idArticle: idArticle,
-            user: {
-              id: 1,
-              name: 'Oanh Thuy',
-              avartar: 'images/avartar.png',
-            }
-          });
-          break;
-        } 
-      }
-    } else {
-      comment.push({
-        id: id, 
-        content: row, 
-        isDelete: isDelete, 
-        idArticle: idArticle,
-        user: {
-          id: 1,
-          name: 'Oanh Thuy',
-          avartar: 'images/avartar.png',
-        }
-      });
+/*
+* click on "+" button 
+* add Add comment event
+* Database Comment - localStorage: id, content, isDelete, idArticle, user-inf(id, name,avatar)
+* take data contentComment - from input value
+*/
+function addComment() {
+  var add = document.getElementById("js-add-cm");
+  add.addEventListener("click", function(){
+    //get Ls
+    var comment = JSON.parse(localStorage.getItem('listComment'));
+    if (!comment) {
+      comment = [];
     }
-  }
-  console.log(comment);
-  //Add comment 
-  document.getElementById('js-input').value = '';
-  localStorage.setItem('listComment', JSON.stringify(comment));
-  renderComment();
-});
 
+    var row = document.getElementById('js-input').value;
+    if (row === ''){
+      alert('You have not entered a comment. Error!');  
+    } else {
+      var id = 1;
+      var isDelete = false;
+      var idArticle = 1;
+      if (comment && comment.length) {
+        for (var i = 0; i < comment.length; i++) {
+          if (i === (comment.length - 1)) {
+            comment.push({
+              id: (comment.length + 1), 
+              content: row, 
+              isDelete: isDelete, 
+              idArticle: idArticle,
+              user: {
+                id: 1,
+                name: 'Oanh Thuy',
+                avartar: 'images/avartar.png',
+              }
+            });
+            break;
+          } 
+        }
+      } else {
+        comment.push({
+          id: id, 
+          content: row, 
+          isDelete: isDelete, 
+          idArticle: idArticle,
+          user: {
+            id: 1,
+            name: 'Oanh Thuy',
+            avartar: 'images/avartar.png',
+          }
+        });
+      }
+    }
+    //Reset input value
+    document.getElementById('js-input').value = '';
+    //setLs
+    localStorage.setItem('listComment', JSON.stringify(comment));
+    renderComment();
+  });
+}
 
+/*
+* click on "Delete" button 
+* add Delete comment event
+* Database Comment - localStorage: id, content, isDelete, idArticle, user-inf(id, name,avatar)
+* take data contentComment - from input value
+*/
 function deleteComment() {
   var comment = JSON.parse(localStorage.getItem('listComment'));
   var clickDelete = document.getElementsByClassName("js-delete-cm");
-  console.log(clickDelete);
+  // console.log(clickDelete);
   for (var i = 0; i < clickDelete.length; i++) {
-    console.log(clickDelete[i]);
+    // console.log(clickDelete[i]);
     clickDelete[i].addEventListener("click", function() {
       var rowDe = + this.dataset.id;
       console.log(rowDe);

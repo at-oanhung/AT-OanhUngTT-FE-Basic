@@ -65,8 +65,7 @@ a:focus {
 }
 
 .btn-primary {
-  /*display: flex;*/
-  margin: 0 auto 0.5rem;
+  margin: 0 auto;
   padding: 1rem;
   background-color: #a11fb9;
   border: 0;

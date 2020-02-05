@@ -12,17 +12,6 @@ var articles = [
     },
     status: 1,
   }
-  // {
-  //   id: 1,
-  //   title: 'How to Make the Best Bubble Tea (Boba Tea)',
-  //   images: 'images/tea.jpg',
-  //   content: 'Bubble tea is an iced drink that originated in Taiwan in the 1980s. It’s made with tea, milk, sugar, and chewy tapioca balls.<br>' +
-  //             'To drink bubble tea, you need a fat straw that’s big enough to suck up the tapioca balls while drinking the tea.<br>' + 
-  //             'If you love bubble tea, try making it at home. My recipe tastes just like the real thing! IT’S FREAKING DELICIOUS!' +
-  //             'The Secret to My Bubble Tea <br>' + 
-  //             'I had amazing bubble tea in South Korea and the secret was in the tapioca balls — they were still warm in the iced drink! </p>',
-  //   status: 1,
-  // }
 ];
 
 localStorage.setItem('article', JSON.stringify(articles));
@@ -45,14 +34,13 @@ function renderArticle(argument) {
                 '<section class="section-content">' +
                   '<img src="' + article[i].images + '" alt="Milk Tea images">' +
                   '<div class="content-new">' +
-                    '<div class="detail-content"' +
-                      '<p><em>' + article[i].content.describe + '</em></p>' +
-                      '<h2>' + article[i].content.titleContent + '</h2>' +
-                      '<p>' + article[i].content.detailContent + '</em></p>' +
-                    '</div>' +
+                    // '<div class="detail-content"' +
+                      '<p class="content-describe"><em>' + article[i].content.describe + '</em></p>' +
+                      '<h3 class="content-title">' + article[i].content.titleContent + '</h3>' +
+                      '<p class="content-detail">' + article[i].content.detailContent + '</em></p>' +
+                    // '</div>' +
                   '</div>' +
                 '</section>';
-    console.log(article[i].content.describe);
     articleEl.innerHTML = content;
   }
 }
