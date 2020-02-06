@@ -115,6 +115,11 @@
   padding: 10px 0;
 }
 
+.article-new .content-detail::first-letter {
+  font-size: 20px;
+  color: #762b90;
+}
+
 .article-new .share-new {
 /*  position: absolute;
   left: 45%;

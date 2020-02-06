@@ -18,7 +18,7 @@ localStorage.setItem('article', JSON.stringify(articles));
 
 var articleEl = document.getElementById('js-article');
 
-function renderArticle(argument) {
+function renderArticle() {
   var article = JSON.parse(localStorage.getItem('article'));
   if (!article) {
     article = [];
@@ -27,7 +27,7 @@ function renderArticle(argument) {
   //Handle 
   articleEl.innerHTML = '';
   var content = '';
-  for (var i =0; i < articles.length; i++) {
+  for (var i =0; i < article.length; i++) {
     content += '<h2 class="title-new">' +
                   article[i].title +
                 '</h2>' +
