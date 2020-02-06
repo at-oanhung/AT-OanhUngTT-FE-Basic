@@ -1,5 +1,4 @@
 var listCommentEl = document.getElementById('js-list-comment');
-// var formCommentEl = document.getElementById('js-form-comment');
 
 var comment;
 function getCommentLs() {
@@ -59,12 +58,11 @@ clickButtonAdd.addEventListener('click', addComment);
 function addComment() {
   getCommentLs();
 
-  var contentComment = document.getElementById('js-input');
-  contentComment = contentComment.value.trim();
-  if (contentComment === ''){
+  var contentCommentEl = document.getElementById('js-input');
+  contentComment = contentCommentEl.value.trim();
+  if (!contentComment){
     alert('You have not entered a comment. Error!');  
   } else {
-    var id = 1;
     var isDelete = false;
     var idArticle = 1;
     if (comment && comment.length) {
@@ -86,7 +84,7 @@ function addComment() {
       }
     } else {
       comment.push({
-        id: id, 
+        id: 1, 
         content: contentComment, 
         isDelete: isDelete, 
         idArticle: idArticle,
@@ -99,8 +97,7 @@ function addComment() {
     }
   }
   //Reset input value
-  var setcontentComment = document.getElementById('js-input');
-  setcontentComment.value = '';
+  contentCommentEl.value = '';
   //setLs
   setCommentLs();
   renderComment();
