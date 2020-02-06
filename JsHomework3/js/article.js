@@ -17,13 +17,16 @@ var articles = [
 localStorage.setItem('article', JSON.stringify(articles));
 
 var articleEl = document.getElementById('js-article');
-
-function renderArticle() {
-  var article = JSON.parse(localStorage.getItem('article'));
+var article;
+function getArticleLs() {
+  article = JSON.parse(localStorage.getItem('article'));
   if (!article) {
     article = [];
   }
+}
 
+function renderArticle() {
+  getArticleLs();
   //Handle 
   articleEl.innerHTML = '';
   var content = '';

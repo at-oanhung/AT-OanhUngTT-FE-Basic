@@ -1,12 +1,16 @@
 var listCommentEl = document.getElementById('js-list-comment');
-var formCommentEl = document.getElementById('js-form-comment');
+// var formCommentEl = document.getElementById('js-form-comment');
 
 var comment;
-function getLs() {
+function getCommentLs() {
   comment = JSON.parse(localStorage.getItem('listComment'));
   if (!comment) {
     comment = [];
   }
+}
+
+function setCommentLs() {
+  localStorage.setItem('listComment', JSON.stringify(comment));
 }
 
 /*
@@ -16,15 +20,15 @@ function getLs() {
 */
 function renderComment() {
   //get Ls
-  getLs();
+  getCommentLs();
 
   //Handle 
   listCommentEl.innerHTML = '';
-  var content = '';
+  var contentListComment = '';
   if (comment.length) {
     for (var i = 0; i < comment.length; i++) { 
       if (comment[i].isDelete === false) {
-        content += '<li class="comment-item">' + 
+        contentListComment += '<li class="comment-item">' + 
         '<a href="#" class="comment-item-avartar">' +
         '<img src="' + comment[i].user.avartar + '" alt="Avartar">' +
         '</a>' +
@@ -37,26 +41,11 @@ function renderComment() {
       }    
     }
   }
-  listCommentEl.innerHTML = content;
+  listCommentEl.innerHTML = contentListComment;
   deleteComment();
 }
 
-function renderForm() {
-  var contentForm = '';
-  contentForm+= '<li class="comment-item">' + 
-  '<a href="#" class="comment-item-avartar">' +
-  '<img src="images/avartar.png" alt="Avartar">' +
-  '</a>' +
-  '<form class="comment-item-inf" method="post">' + 
-  '<input type="text" name="comment" placeholder="Comment" id="js-input">' +
-  '<button type="button" class="btn-primary btn-add" id="js-add-cm">+</button>' +
-  '</form>' + 
-  '<li>';
-  formCommentEl.innerHTML = contentForm;
-}
-
 renderComment();
-renderForm();
 
 /*
 * click on "+" button 
@@ -65,18 +54,14 @@ renderForm();
 * take data contentComment - from input value
 */
 // function addComment() {
-var add = document.getElementById('js-add-cm');
-add.addEventListener('click', addComment);
+var clickButtonAdd = document.getElementById('js-add-cm');
+clickButtonAdd.addEventListener('click', addComment);
 function addComment() {
-  //get Ls
-  var comment = JSON.parse(localStorage.getItem('listComment'));
-  if (!comment) {
-    comment = [];
-  }
+  getCommentLs();
 
-  var row = document.getElementById('js-input').value;
-  row = row.trim();
-  if (row === ''){
+  var contentComment = document.getElementById('js-input');
+  contentComment = contentComment.value.trim();
+  if (contentComment === ''){
     alert('You have not entered a comment. Error!');  
   } else {
     var id = 1;
@@ -87,7 +72,7 @@ function addComment() {
         if (i === (comment.length - 1)) {
           comment.push({
             id: (comment.length + 1), 
-            content: row, 
+            content: contentComment, 
             isDelete: isDelete, 
             idArticle: idArticle,
             user: {
@@ -102,7 +87,7 @@ function addComment() {
     } else {
       comment.push({
         id: id, 
-        content: row, 
+        content: contentComment, 
         isDelete: isDelete, 
         idArticle: idArticle,
         user: {
@@ -114,9 +99,10 @@ function addComment() {
     }
   }
   //Reset input value
-  document.getElementById('js-input').value = '';
+  var setcontentComment = document.getElementById('js-input');
+  setcontentComment.value = '';
   //setLs
-  localStorage.setItem('listComment', JSON.stringify(comment));
+  setCommentLs();
   renderComment();
 }
 
@@ -133,20 +119,18 @@ document.querySelector('#js-input').addEventListener('keypress', function (event
 * take data contentComment - from input value
 */
 function deleteComment() {
-  var comment = JSON.parse(localStorage.getItem('listComment'));
+  getCommentLs();
   var clickDelete = document.getElementsByClassName('js-delete-cm');
-  // console.log(clickDelete);
   for (var i = 0; i < clickDelete.length; i++) {
-    // console.log(clickDelete[i]);
     clickDelete[i].addEventListener('click', function() {
       var rowDe = + this.dataset.id;
-      console.log(rowDe);
       for (var i = 0; i < comment.length; i++) {
         if (rowDe === comment[i].id) {
           comment[i].isDelete = true;
           localStorage.setItem('listComment', JSON.stringify(comment));
           alert('Delete sussces!');   
           renderComment();
+          break;
         }
       }
     });    
