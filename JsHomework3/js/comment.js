@@ -42,7 +42,7 @@ function renderComment() {
 }
 
 function renderForm() {
-  var contentForm = "";
+  var contentForm = '';
   contentForm+= '<li class="comment-item">' + 
   '<a href="#" class="comment-item-avartar">' +
   '<img src="images/avartar.png" alt="Avartar">' +
