@@ -60,41 +60,33 @@ function addComment() {
 
   var contentCommentEl = document.getElementById('js-input');
   contentComment = contentCommentEl.value.trim();
-  if (!contentComment){
+  if (!contentComment) {
     alert('You have not entered a comment. Error!');  
   } else {
+    var idComment;
     var isDelete = false;
     var idArticle = 1;
     if (comment && comment.length) {
       for (var i = 0; i < comment.length; i++) {
         if (i === (comment.length - 1)) {
-          comment.push({
-            id: (comment.length + 1), 
-            content: contentComment, 
-            isDelete: isDelete, 
-            idArticle: idArticle,
-            user: {
-              id: 1,
-              name: 'Oanh Thuy',
-              avartar: 'images/avartar.png',
-            }
-          });
+          idComment = comment.length + 1;
           break;
         } 
       }
     } else {
-      comment.push({
-        id: 1, 
-        content: contentComment, 
-        isDelete: isDelete, 
-        idArticle: idArticle,
-        user: {
-          id: 1,
-          name: 'Oanh Thuy',
-          avartar: 'images/avartar.png',
-        }
-      });
+      idComment = 1;
     }
+    comment.push({
+      id: idComment,
+      content: contentComment, 
+      isDelete: isDelete, 
+      idArticle: idArticle,
+      user: {
+        id: 1,
+        name: 'Oanh Thuy',
+        avartar: 'images/avartar.png',
+      },
+    });
   }
   //Reset input value
   contentCommentEl.value = '';
