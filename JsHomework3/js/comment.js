@@ -62,19 +62,9 @@ function addComment() {
   if (!contentComment) {
     alert('You have not entered a comment. Error!');  
   } else {
-    var idComment;
     var isDelete = false;
     var idArticle = 1;
-    if (comment && comment.length) {
-      for (var i = 0; i < comment.length; i++) {
-        if (i === (comment.length - 1)) {
-          idComment = comment.length + 1;
-          break;
-        } 
-      }
-    } else {
-      idComment = 1;
-    }
+    var idComment = comment.length + 1;
     comment.push({
       id: idComment,
       content: contentComment, 
