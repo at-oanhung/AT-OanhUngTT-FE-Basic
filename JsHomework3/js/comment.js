@@ -52,7 +52,6 @@ renderComment();
 * Database Comment - localStorage: id, content, isDelete, idArticle, user-inf(id, name,avatar)
 * take data contentComment - from input value
 */
-// function addComment() {
 var clickButtonAdd = document.getElementById('js-add-cm');
 clickButtonAdd.addEventListener('click', addComment);
 function addComment() {
