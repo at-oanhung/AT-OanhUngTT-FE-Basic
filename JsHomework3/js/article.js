@@ -37,11 +37,9 @@ function renderArticle() {
                 '<section class="section-content">' +
                   '<img src="' + article[i].images + '" alt="Milk Tea images">' +
                   '<div class="content-new">' +
-                    // '<div class="detail-content"' +
-                      '<p class="content-describe"><em>' + article[i].content.describe + '</em></p>' +
-                      '<h3 class="content-title">' + article[i].content.titleContent + '</h3>' +
-                      '<p class="content-detail">' + article[i].content.detailContent + '</em></p>' +
-                    // '</div>' +
+                    '<p class="content-describe"><em>' + article[i].content.describe + '</em></p>' +
+                    '<h3 class="content-title">' + article[i].content.titleContent + '</h3>' +
+                    '<p class="content-detail">' + article[i].content.detailContent + '</em></p>' +
                   '</div>' +
                 '</section>';
     articleEl.innerHTML = content;
