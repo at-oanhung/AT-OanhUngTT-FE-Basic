@@ -26,8 +26,7 @@
       .page-header .section-header .header-left .logo .content p {
         margin-top: 4px;
         font-family: 'UTM-AVo', Arial, Helvetica, sans-serif;
-        font-size: 12px;
-        font-size: 1em; }
+        font-size: 1rem; }
   .page-header .section-header .header-right {
     display: flex;
     flex-wrap: wrap;
@@ -74,9 +73,9 @@
         color: #8e8e8e;
         font-size: 12px; }
         .page-header .section-menu .main-menu .menu-list .menu-item .menu-item-link:hover {
-          color: #62c6f8; }
+          color: #4cc1fc; }
       .page-header .section-menu .main-menu .menu-list .menu-item .active {
-        color: #62c6f8; }
+        color: #4cc1fc; }
       .page-header .section-menu .main-menu .menu-list .menu-item:first-child {
         border-left: 0; }
   .page-header .section-menu .menu-social .social-item-link {
@@ -116,7 +115,7 @@
       .page-main .main-content .page-aside .aside-children .title-children {
         position: relative;
         padding: 15px;
-        background: #d9e4e9;
+        background-color: #d9e4e9;
         text-transform: uppercase; }
         .page-main .main-content .page-aside .aside-adults .title-adults::after,
         .page-main .main-content .page-aside .aside-adults .title-children::after,
@@ -138,7 +137,7 @@
           .page-main .main-content .page-aside .aside-adults .content-adults .content-list .content-item .content-link,
           .page-main .main-content .page-aside .aside-children .content-adults .content-list .content-item .content-link {
             padding: 0;
-            font-family: 'Myriad Pro', Arial, Helvetica, sans-serif;
+            font-family: 'UTM-AVo', Arial, Helvetica, sans-serif;
             font-size: 14px; }
     .page-main .main-content .page-aside .aside-children {
       margin-bottom: 42px; }
@@ -146,13 +145,13 @@
       display: flex;
       padding: 27px 20px;
       text-align: center;
-      background: #d9e4e9; }
+      background-color: #d9e4e9; }
       .page-main .main-content .page-aside .aside-form .title-form {
         padding-bottom: 22px;
         text-transform: uppercase;
-        font-family: 'UTM-AVobold',Arial, Helvetica, sans-serif;
-        text-align: left;
-        font-size: 18px; }
+        font-family: 'UTM-AVobold', Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        text-align: left; }
       .page-main .main-content .page-aside .aside-form input {
         width: 100%;
         margin-top: 15px;
@@ -163,7 +162,7 @@
         background-color: #4bbc56;
         color: #ffffff;
         text-transform: uppercase;
-        font-family: 'UTM-AVobold',Arial, Helvetica, sans-serif;
+        font-family: 'UTM-AVobold', Arial, Helvetica, sans-serif;
         font-size: 1rem; }
   .page-main .main-content .section-services {
     width: 76%; }
@@ -190,7 +189,8 @@
           .page-main .main-content .section-services .services-list .services-item .detail-item .services-name {
             padding: 20px 0 0 24px;
             font-size: 1rem;
-            font-weight: bold; }
+            font-weight: bold;
+            font-style: none; }
           .page-main .main-content .section-services .services-list .services-item .detail-item .services-content {
             padding: 24px 0 0 24px;
             font-size: 13px;
@@ -203,7 +203,7 @@
   .page-footer .section-footer {
     display: flex;
     flex-wrap: wrap;
-    padding: 50px 0 40px;
+    padding: 45px 0 40px;
     font-size: 12px; }
     .page-footer .section-footer .section-about,
     .page-footer .section-footer .section-support,
@@ -212,23 +212,26 @@
       .page-footer .section-footer .section-about .title,
       .page-footer .section-footer .section-support .title,
       .page-footer .section-footer .section-connect .title {
-        font-family: 'Myriad Pro' ,Arial, Helvetica, sans-serif;
-        font-size: 18px;
-        margin-bottom: 7px; }
-      .page-footer .section-footer .section-about .content .content-list,
-      .page-footer .section-footer .section-support .content .content-list,
-      .page-footer .section-footer .section-connect .content .content-list {
-        list-style-position: inside; }
-        .page-footer .section-footer .section-about .content .content-list .content-item,
-        .page-footer .section-footer .section-support .content .content-list .content-item,
-        .page-footer .section-footer .section-connect .content .content-list .content-item {
-          margin-top: 21px; }
-          .page-footer .section-footer .section-about .content .content-list .content-item .content-link,
-          .page-footer .section-footer .section-support .content .content-list .content-item .content-link,
-          .page-footer .section-footer .section-connect .content .content-list .content-item .content-link {
-            font-size: 1em;
-            text-transform: uppercase;
-            color: #ffffff; }
+        font-family: 'UTM-AVobold', Arial, Helvetica, sans-serif;
+        font-size: 18px; }
+      .page-footer .section-footer .section-about .content,
+      .page-footer .section-footer .section-support .content,
+      .page-footer .section-footer .section-connect .content {
+        margin-top: 21px; }
+        .page-footer .section-footer .section-about .content .content-list,
+        .page-footer .section-footer .section-support .content .content-list,
+        .page-footer .section-footer .section-connect .content .content-list {
+          list-style-position: inside; }
+          .page-footer .section-footer .section-about .content .content-list .content-item,
+          .page-footer .section-footer .section-support .content .content-list .content-item,
+          .page-footer .section-footer .section-connect .content .content-list .content-item {
+            margin-top: 4px; }
+            .page-footer .section-footer .section-about .content .content-list .content-item .content-link,
+            .page-footer .section-footer .section-support .content .content-list .content-item .content-link,
+            .page-footer .section-footer .section-connect .content .content-list .content-item .content-link {
+              font-size: 1em;
+              text-transform: uppercase;
+              color: #ffffff; }
     .page-footer .section-footer .section-connect .content-list {
       list-style-type: none; }
       .page-footer .section-footer .section-connect .content-list .content-link {
@@ -241,7 +244,7 @@
     flex-wrap: wrap;
     border-top: 1px solid #81d1f9;
     text-transform: uppercase;
-    padding: 23px 0;
+    padding: 15px 0;
     font-size: 1em; }
     .page-footer .section-copyright > div {
       display: flex;
