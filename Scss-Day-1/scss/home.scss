@@ -1,6 +1,17 @@
-@import url(utm-avo/fonts.css);
-@import url(utm-avobold/fonts.css);
 @import url(style.css);
+@font-face {
+  font-family: 'UTM-AVo';
+  src: url('utm-avo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UTM-AVobold';
+  src: url('utm-avobold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .container {
 	width: 100%;
