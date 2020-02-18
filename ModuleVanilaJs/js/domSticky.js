@@ -3,7 +3,6 @@ import {stickyEl, renderList} from "./render.js";
 var stickyItemEl = document.getElementsByClassName('sticky-item');
   
 var event = (function() {
-  var topOfSticky = stickyEl.scrollTop;
   function eventSticky() {
     var sum = 0;
     var min = 0;
