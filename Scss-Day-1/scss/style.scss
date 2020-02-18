@@ -1,4 +1,4 @@
-* ,*:before, *:after {
+  * ,*:before, *:after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -63,4 +63,17 @@ a {
   content: "";
   clear: both;
   display: block;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+input {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px 12px;
 }
