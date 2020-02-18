@@ -1,5 +1,3 @@
-var stickyItemEl = document.getElementsByClassName('sticky-item');
-
 var stickyList = (function() {
   function renderList(listStickyEl, listItem) {
     var ulEl = document.createElement('ul');
@@ -25,6 +23,7 @@ var stickyList = (function() {
   }
 
   function eventSticky(event) {
+    var stickyItemEl = document.getElementsByClassName('sticky-item');
     var maxHeight = 0;
     var minHeight = 0;
     for (var i = 0; i < stickyItemEl.length; i++) {
