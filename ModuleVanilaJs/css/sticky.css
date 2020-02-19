@@ -15,19 +15,19 @@
   height: 100vh;
 }
 
-.section-sticky .sticky-list {
+.sticky-list {
   width: 20%;
   height: 225px;
   border: 1px solid #000000;
   overflow: auto;
 }
 
-.section-sticky .sticky-item {
+.sticky-item {
   position: relative;
   list-style-type: none;
 }
 
-.section-sticky .sticky-title {
+.sticky-title {
   display: flex;
   align-items: center;
   justify-content: space-around;  
@@ -45,7 +45,7 @@
   top: 5px;
 }
 
-.section-sticky .sticky-content li{
+.sticky-content li{
   padding: 5px 10px;
   list-style-type: none;
 }

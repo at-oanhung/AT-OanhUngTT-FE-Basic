@@ -29,4 +29,4 @@ var listItem = [
 
 var listStickyEl = document.querySelector('#js-list-sticky');
 
-stickyList.render(listStickyEl, listItem);
+stickyList.render(listStickyEl, listItem, {nameSticky:'sticky-list' ,titleSticky:'sticky-title'});

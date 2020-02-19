@@ -1,13 +1,13 @@
 var stickyList = (function() {
-  function renderList(listStickyEl, listItem) {
+  function renderList(listStickyEl, listItem, {nameSticky: nameSticky, titleSticky: titleSticky}) {
     var ulEl = document.createElement('ul');
-    ulEl.classList.add('sticky-list');
+    ulEl.classList.add(nameSticky);
     ulEl.id = 'js-section-sticky';
 
     var content = '';
     for (var i = 0; i < listItem.length; i++) {
       content +=  '<li class="sticky-item">' + 
-      '<div class="sticky-title">' +
+      '<div class="'+ titleSticky + '">' +
       listItem[i].title +
       '</div>'+
       '<ul class="sticky-content">';
