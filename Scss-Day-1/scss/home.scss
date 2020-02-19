@@ -73,7 +73,7 @@ $bd-primary: #e9e9e9;
 .section-header {
   display: flex;
   padding: 10px 0 15px;
-  & .container {
+  .container {
     display: flex;
     justify-content: space-between;
   }
@@ -119,7 +119,7 @@ $bd-primary: #e9e9e9;
   flex-wrap: wrap;
   border-top: 1px solid $bd-primary;
   border-bottom: 1px solid $bd-primary;
-  & .container {
+  .container {
     display: flex;   
     justify-content: space-between;
     align-items: center;
@@ -342,7 +342,7 @@ $bd-primary: #e9e9e9;
   text-transform: uppercase;
   padding: 15px 0;
   font-size: 1em;
-  & .container {
+  .container {
     display: flex;
     justify-content: space-between;
   }
