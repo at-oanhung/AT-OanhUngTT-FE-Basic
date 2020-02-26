@@ -32,7 +32,9 @@ function renderComment() {
         '<img src="' + comment[i].user.avartar + '" alt="Avartar">' +
         '</a>' +
         '<div class="comment-item-inf">' + 
-        '<span class="comment-item-username clr">' + comment[i].user.name + '</span>' +
+        '<p class="comment-item-username clr">' + comment[i].user.name + 
+          '<i style = "font-weight: 400; padding-left:5px;">(' + getTime(comment[i].user.time) +' minutes ago)</i>' + 
+        '</p>' +
         '<span class="comment-item-cmt clr js-content">' + comment[i].content + '</span>' +
         '<button type="button" class="btn-second delete js-delete-cm" data-id="' + comment[i].id +'" id="a">Delete</button>' +
         '</div>' + 
@@ -74,6 +76,7 @@ function addComment() {
         id: 1,
         name: 'Oanh Thuy',
         avartar: 'images/avartar.png',
+        time: setTime(),
       },
     });
   }
@@ -113,4 +116,19 @@ function deleteComment() {
       }
     });    
   }
+}
+
+function setTime() {
+  var day = new Date();
+  return day;
+}
+
+function getTime(day) {
+   var startDate = new Date(day);
+  var endDate   = new Date();
+  var seconds = Math.floor((endDate.getTime() - startDate.getTime()) / 1000 / 60);
+  if (seconds  < 1){
+    seconds = 'few';
+  } 
+  return seconds;
 }
