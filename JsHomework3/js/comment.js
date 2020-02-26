@@ -33,7 +33,7 @@ function renderComment() {
         '</a>' +
         '<div class="comment-item-inf">' + 
         '<p class="comment-item-username clr">' + comment[i].user.name + 
-          '<i style = "font-weight: 400; padding-left:5px;">(' + getTime(comment[i].user.time) +' minutes ago)</i>' + 
+          '<i style = "font-weight: 400; padding-left:5px;">(' + getTime(comment[i].user.time) +')</i>' + 
         '</p>' +
         '<span class="comment-item-cmt clr js-content">' + comment[i].content + '</span>' +
         '<button type="button" class="btn-second delete js-delete-cm" data-id="' + comment[i].id +'" id="a">Delete</button>' +
@@ -128,7 +128,15 @@ function getTime(day) {
   var endDate   = new Date();
   var seconds = Math.floor((endDate.getTime() - startDate.getTime()) / 1000 / 60);
   if (seconds  < 1){
-    seconds = 'few';
-  } 
-  return seconds;
+    seconds = 'few minutes';
+  } else if (seconds > 60) {
+    var hours = Math.floor(seconds / 60);
+    seconds = hours + ' hours';
+  } else if (hours > 24) {
+    var day = Math.floor(hours / 24);
+    seconds = day + ' day';
+  } else {
+    seconds = seconds + ' minutes';
+  }
+  return seconds + ' ago';
 }
