@@ -14,68 +14,68 @@ showButton(step);
 var smsCode = 0;
 
 /**
- * click on 'Next' button
- * Step up to 1
- * Show tab
- * add the "active" class to the step present
- * delete the "active" class & add the "visited" class to the step before
- */
- function progressbarNext() {
-   let stepEl = document.querySelectorAll('.js-step');
-   step = step + 1;
-   for (var i = 0; i < tabEl.length; i++) {
-     if (i === step) {
-       tabEl[i - 1].classList.add('d-none');
-       tabEl[i].classList.remove('d-none');
-     }
-   }
-   stepEl[step - 1].classList.remove("active");
-   stepEl[step - 1].classList.add('visited');
-   stepEl[step].classList.add('active');
+* click on 'Next' button
+* Step up to 1
+* Show tab
+* add the "active" class to the step present
+* delete the "active" class & add the "visited" class to the step before
+*/
+function progressbarNext() {
+  let stepEl = document.querySelectorAll('.js-step');
+  step = step + 1;
+  for (var i = 0; i < tabEl.length; i++) {
+    if (i === step) {
+      tabEl[i - 1].classList.add('d-none');
+      tabEl[i].classList.remove('d-none');
+    }
+  }
+  stepEl[step - 1].classList.remove("active");
+  stepEl[step - 1].classList.add('visited');
+  stepEl[step].classList.add('active');
 
-   showButton(step);
- };
-
-/**
- * click on 'Back' button
- * Step down 1
- * Show tab
- * add the "active" class to the step present
- * delete the "active" class & add the "visited" class to the step after
- * if (step = 3) then come back step 1 to get the code Sms back
- */
- function progressbarBack() {
-   let stepEl = document.querySelectorAll(".js-step");
-   if (step === 3) {
-     tabEl[step].classList.add('d-none');
-     step = step - 2;
-     stepEl[step + 2].classList.remove('active');
-     stepEl[step + 1].classList.remove('visited');
-   } else {
-     step = step - 1;
-   }
-   for (var i = 0; i < tabEl.length; i++) {
-     if (i === step) {
-       tabEl[i + 1].classList.add('d-none');
-       tabEl[i].classList.remove('d-none');
-       break;
-     }
-   }
-   stepEl[step + 1].classList.remove('active');
-   stepEl[step].classList.remove('visited');
-   stepEl[step].classList.add('active');
-   showButton(step);
- };
+  showButton(step);
+};
 
 /**
- * @method showButton
- * @param {number} step
- * Consider the display case and not display
- * Execute the click function
- * This function will display the specified tab of the form
- * Event the Back/Next buttons
- */
- function showButton(n) {
+* click on 'Back' button
+* Step down 1
+* Show tab
+* add the "active" class to the step present
+* delete the "active" class & add the "visited" class to the step after
+* if (step = 3) then come back step 1 to get the code Sms back
+*/
+function progressbarBack() {
+  let stepEl = document.querySelectorAll(".js-step");
+  if (step === 3) {
+    tabEl[step].classList.add('d-none');
+    step = step - 2;
+    stepEl[step + 2].classList.remove('active');
+    stepEl[step + 1].classList.remove('visited');
+  } else {
+    step = step - 1;
+  }
+  for (var i = 0; i < tabEl.length; i++) {
+    if (i === step) {
+      tabEl[i + 1].classList.add('d-none');
+      tabEl[i].classList.remove('d-none');
+      break;
+    }
+  }
+  stepEl[step + 1].classList.remove('active');
+  stepEl[step].classList.remove('visited');
+  stepEl[step].classList.add('active');
+  showButton(step);
+};
+
+/**
+* @method showButton
+* @param {number} step
+* Consider the display case and not display
+* Execute the click function
+* This function will display the specified tab of the form
+* Event the Back/Next buttons
+*/
+function showButton(n) {
   if (n == 0 || n == 4) {
     prevBtnEl.disabled = true;
   } else {
@@ -95,6 +95,11 @@ var smsCode = 0;
   prevBtnEl.addEventListener('click', progressbarBack);
 }
 
+/**
+* @method checkEvent
+* Perform when click 'Next' button
+* Check conditions step present
+*/
 function checkEvent() {
   switch(step) {
     case 0:
@@ -121,6 +126,12 @@ function checkEvent() {
   }
 }
 
+/**
+* @method validateForm
+* All value input not null
+* Check email format and Password length bigger 4
+* return checkValue (boolean)
+*/
 function validateForm() {
   let valueInputEL = tabEl[step].querySelectorAll('.form-control');
   let errorEL = tabEl[step].querySelector('.error');
@@ -180,52 +191,56 @@ function validateForm() {
     pass1El.classList.add('invalid');
     checkValue = false;
   }
-  
+
   return checkValue;
 }
 
 /* 
- * add Event Input 
- * when the length of a phone number different 10 then disabled button Next
- * return valuePhone 
- */
- function checkPhone() {
-   let phoneEl = document.querySelectorAll('.js-check-number');
-   let phoneFormat = /((09|03|07|08|05|01)+([0-9]{8}))/;
-   eventNext = 0;
-   for (let i = 0; i < phoneEl.length; i++) {
-     eventNext += phoneEl[i].value.length;
-     if (eventNext === 10) {
-       nextBtnEl.disabled = false;
-     } else {
-       nextBtnEl.disabled = true;
-     }
-     phoneEl[i].addEventListener('input', function(e) {
-       valuePhone = '';
-       item = 0;
-       for (let i = 0; i < phoneEl.length; i++) {
-         valuePhone += phoneEl[i].value;
-         item += phoneEl[i].value.length;
-       }
-       if (item === 10) {
-         if (valuePhone.match(phoneFormat)) {
-           nextBtnEl.disabled = false;
-           return valuePhone;
-         } else {
-           alert("Bạn nhập sai số điện thoại!");
-         }
-       } else {
-         nextBtnEl.disabled = true;
-       }
-     });
-   }
- }
+* add EventListener Input 
+* when the length of a phone number different 10 then disabled button Next
+* return valuePhone 
+*/
+function checkPhone() {
+  let phoneEl = document.querySelectorAll('.js-check-number');
+  let phoneFormat = /((09|03|07|08|05|01)+([0-9]{8}))/;
+  eventNext = 0;
+  for (let i = 0; i < phoneEl.length; i++) {
+    eventNext += phoneEl[i].value.length;
+    if (eventNext === 10) {
+      nextBtnEl.disabled = false;
+    } else {
+      nextBtnEl.disabled = true;
+    }
+    phoneEl[i].addEventListener('input', function(e) {
+      valuePhone = '';
+      item = 0;
+      for (let i = 0; i < phoneEl.length; i++) {
+        valuePhone += phoneEl[i].value;
+        item += phoneEl[i].value.length;
+      }
+      if (item === 10) {
+        if (valuePhone.match(phoneFormat)) {
+          nextBtnEl.disabled = false;
+          return valuePhone;
+        } else {
+          alert("Bạn nhập sai số điện thoại!");
+        }
+      } else {
+        nextBtnEl.disabled = true;
+      }
+    });
+  }
+}
 
 // random numbers in the range from min to (max-1)
 function getRandom(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+/* 
+* @method focusSms
+* add Focus event to the Input
+*/
 function focusSms() {
   let smsEl = document.querySelectorAll('.js-sms-code');
   for (var i = 0; i < smsEl.length; i++) {
@@ -243,6 +258,10 @@ function focusSms() {
   }
 }
 
+/* 
+* @method checkSms
+* value comparison Sms Code with 4 inputs value
+*/
 function checkSms() {
   let smsEl = document.querySelectorAll('.js-sms-code');
   var temp = '';
