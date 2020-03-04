@@ -246,7 +246,7 @@ function focusSms() {
   for (var i = 0; i < smsEl.length; i++) {
     smsEl[i].addEventListener('keyup', function() {
       var index = -1;
-      for (var j = 0; j < smsEl.length - 1; j++) {
+      for (var j = 0; j < smsEl.length; j++) {
         if (smsEl[j] === this) {
           index = j;
           break;
