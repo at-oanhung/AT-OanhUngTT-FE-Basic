@@ -69,12 +69,15 @@
     }
     &.active::before {
       background-color: $bg-dark;
+      @include transition(all 0.5s ease-out);
     }
     &.visited::before {
       background-color: $bg-success;
+      @include transition(all 0.2s ease-out);
     }
     &.visited::after {
       background-color: $bg-success;
+      @include transition(all 0.25s ease-out);
     }
   }
 }

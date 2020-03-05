@@ -174,11 +174,23 @@ img {
     .progressbar .step:last-child::after {
       display: none; }
     .progressbar .step.active::before {
-      background-color: #999595; }
+      background-color: #999595;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
     .progressbar .step.visited::before {
-      background-color: #f19097; }
+      background-color: #f19097;
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
     .progressbar .step.visited::after {
-      background-color: #f19097; }
+      background-color: #f19097;
+      -webkit-transition: all 0.25s ease-out;
+      -moz-transition: all 0.25s ease-out;
+      -o-transition: all 0.25s ease-out;
+      transition: all 0.25s ease-out; }
 
 .tab {
   padding: 20px;

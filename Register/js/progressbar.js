@@ -130,7 +130,7 @@ function checkEvent() {
 * @method validateForm
 * All value input not null
 * Check email format and Password length bigger 4
-* return checkValue (boolean)
+* return {boolean} checkValue 
 */
 function validateForm() {
   let valueInputEL = tabEl[step].querySelectorAll('.form-control');
@@ -198,7 +198,7 @@ function validateForm() {
 /* 
 * add EventListener Input 
 * when the length of a phone number different 10 then disabled button Next
-* return valuePhone 
+* return {string} valuePhone 
 */
 function checkPhone() {
   let phoneEl = document.querySelectorAll('.js-check-number');
