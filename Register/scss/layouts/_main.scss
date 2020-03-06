@@ -1,0 +1,187 @@
+.page-main {
+  height: 100vh;
+  padding: 35px 0;
+  background-color: $bg-secondary;
+  overflow: hidden;
+}
+
+.signup-content {
+  @extend %d-flex;
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-color: $bg-primary;
+  @include box-shadow(0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05));
+  @include border-radius(20px);
+}
+
+.signup-form {
+  width: 60%;
+  padding: 0 35px;
+}
+
+.signup-images {
+  width: 40%;
+  padding: 70px 0;
+  text-align: center;
+}
+
+.title-form {
+  padding: 10px 0;
+  @include font(20px);
+  text-transform: uppercase;
+  @extend .align-center;
+}
+
+.progressbar {
+  margin: 0 10%;
+  overflow: hidden;
+  counter-reset: number;
+  .step {
+    position: relative;
+    float: left;
+    text-align: center;
+    width: calc(100%/5);
+    opacity: 0.7;
+    &::before {
+      counter-increment: number;
+      content: counter(number);
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+      background-color: $bg-default;
+      line-height: 30px;
+      border-radius: 50%;
+    }
+    &::after {
+      content: '';
+      width: calc(100% - 30px);
+      height: 2px;
+      background-color: $bg-dark;
+      position: absolute;
+      top: 12px;
+      left: calc(50% + 15px);
+      z-index: -1;
+    }
+    &:last-child::after {
+      display: none;
+    }
+    &.active::before {
+      background-color: $bg-dark;
+      @include transition(all 0.5s ease-out);
+    }
+    &.visited::before {
+      background-color: $bg-success;
+      @include transition(all 0.2s ease-out);
+    }
+    &.visited::after {
+      background-color: $bg-success;
+      @include transition(all 0.25s ease-out);
+    }
+  }
+}
+
+.tab {
+  @extend %d-flex;
+  padding: 20px;
+  overflow: hidden;
+  .content-tab {
+    width: 100%;
+  }
+  .title-tab {
+    width: 100%;
+    margin: 15px 10px;
+    @include font(18px);
+  }
+  .note {
+    margin: 10px;
+  }
+  .logo-success {
+    height: 150px;
+    margin: 20px 0;
+  }
+}
+
+.form-group {
+  float: left;
+  padding: 5px 10px;
+  width: 100%;
+  label {
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+  .required {
+    color: $txt-second;
+  }
+  input {
+    width: 100%;
+    padding: 8px;
+    background-color: $bg-default;
+    border: 0;
+    &.invalid {
+      border: 1px solid #dc3545;
+    }
+  }
+}
+
+.phone-number {
+  position: relative;
+  @extend %d-flex;
+  &::after {
+    content: '-';
+    position: absolute;
+    right: 0;
+    top:30%;
+  }
+  &:last-child::after {
+    content: '';
+  }
+  input {
+    text-align: center;
+  }
+}
+
+button {
+  width: 100px;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  background-color: $btn-primary;
+  font-weight: bold;
+  color: $txt-accent;
+  &[disabled] {
+    display: none;
+  }
+  &:hover,
+  &:focus,
+  &:visited {
+    border: 0;
+    background-color: $btn-event;
+  }
+}
+
+.form-content {
+  height: 400px;
+  overflow: hidden;
+  .error {
+    width: 100%;
+    margin: 0.25rem;
+    color: $txt-second;
+  }
+}
+
+.submit-form {
+  float: right;
+}
+
+.information{
+  margin: 10px 30px;
+  .title-inf {
+    @include font(16px);
+  }
+  .content-inf {
+    padding: 10px;
+  }
+}

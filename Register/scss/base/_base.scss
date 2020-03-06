@@ -1,0 +1,46 @@
+* ,*:before, *:after {
+  margin: 0;
+  padding: 0;
+  @include box-sizing(border-box);
+}
+
+body {
+  background-color: $bg-primary;
+  font-family: 'Roboto','Open Sans', sans-serif;
+  color: $txt-primary;
+  @include font(14px, 400);
+  line-height: 16px;
+  position: relative;
+}
+
+.clr {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: $txt-default;
+  text-decoration: none;
+  @include transition(all ease-in-out 0.2s);
+}
+
+a:hover,
+a:focus {
+  color: $txt-link;
+}
+
+img {
+  width: 100%;
+}
