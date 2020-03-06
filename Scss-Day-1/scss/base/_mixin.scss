@@ -1,0 +1,83 @@
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  -o-box-shadow: $shadows;
+  -ms-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin box-sizing($sizing) {
+  -moz-box-sizing: $sizing;
+  -webkit-box-sizing: $sizing;
+  -o-box-sizing: $sizing;
+  -ms-box-sizing: $sizing;
+  box-sizing: $sizing;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -o-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+
+
+@mixin large-text {
+  font: {
+  family: Arial, Helvetica, sans-serif;
+  size: 14px;
+  weight: 400;
+  }
+  color: #555555;
+}
+
+@mixin btn-primary {
+  background-color: $bg-btn-primary;
+  color: $txt-second;
+  text-transform: uppercase;
+}
+
+@mixin second-text($size: 1rem) {
+  font: {
+    family: 'UTM-AVobold', Arial, Helvetica, sans-serif;
+    size: $size;
+  }
+}
+
+@mixin third-text($size: 12px) {
+  font: {
+    family: 'UTM-AVo', Arial, Helvetica, sans-serif;
+    size: $size;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin sexy-border($color, $width: 1px, $style: solid) {
+  border: {
+    color: $color;
+    width: $width;
+    style: $style;
+  }
+}
+
+@mixin font($size, $weight, $style: none) {
+  font: {
+    size: $size;
+    weight: $weight;
+    style: $style;
+  }
+}
