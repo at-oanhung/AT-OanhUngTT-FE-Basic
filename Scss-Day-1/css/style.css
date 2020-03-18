@@ -271,14 +271,6 @@ input {
       clear: both;
       display: block;
       border-bottom: 2px solid #62c6f8; }
-  .aside-form input[type=submit] {
-    width: 50%;
-    border: 0;
-    background-color: #4bbc56;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-family: 'UTM-AVobold', Arial, Helvetica, sans-serif;
-    font-size: 1rem; }
 
 .section-services {
   width: 76%; }
@@ -371,5 +363,17 @@ input {
   .footer-bottom .footer-link {
     color: #7df1cf;
     font-size: 1em; }
+
+input[type=submit] {
+  width: 50%;
+  border: 0;
+  background-color: #4bbc56;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'UTM-AVobold', Arial, Helvetica, sans-serif;
+  font-size: 1rem; }
+
+.d-none {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
