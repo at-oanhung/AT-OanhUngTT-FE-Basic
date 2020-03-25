@@ -1,0 +1,90 @@
+.section-header {
+  display: flex;
+  padding: 10px 0 15px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.header-left {
+  .logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .content-title {
+    padding-left: 16px;
+    font-size: 16px;
+  }
+  .title-primary {          
+    @include second-text(1.25em);
+    text-transform: uppercase;
+  }
+  .title-detail { 
+    margin-top: 4px;
+    @include third-text(1rem);
+  }
+}
+.header-right {
+  display: flex;
+  flex-wrap: wrap;  
+  align-items: center;
+  padding-left: 40px;
+  height: 100%;
+  background: url(../images/icon-number.jpg) left no-repeat;
+  .question {
+    @include font(14px, bold, italic);
+  }
+  .phone {
+    padding-left: 6px;
+    @include font(18px, bold);
+    color: $txt-primary;
+  }
+}
+.section-menu {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid $bd-primary;
+  border-bottom: 1px solid $bd-primary;
+  .container {
+    display: flex;   
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.main-menu {
+  .menu-list {
+    background-color: $bg-accent;
+  }
+  .menu-item {
+    @extend .social-item;
+    border-left: 1px solid $bd-primary;
+    .active {
+      color: $txt-primary;
+    }
+    &:first-child {
+      border-left: 0;
+    }
+  }
+  .menu-item-link {
+    display: block;
+    text-align: center;
+    padding: 22px;
+    color: $txt-accent;
+    font-size: 12px;
+    &:hover {
+      color: $txt-primary;
+    }
+  }
+}
+.social-item {
+  float: left;
+}
+.menu-social {
+  .social-item-link {
+    display: block;
+    text-align: center;
+    padding-right: 10px;
+  }
+}

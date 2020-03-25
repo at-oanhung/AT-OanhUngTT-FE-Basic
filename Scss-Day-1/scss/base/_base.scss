@@ -1,0 +1,70 @@
+* ,*:before, *:after {
+  margin: 0;
+  padding: 0;
+  @include box-sizing(border-box);
+}
+
+body {
+  position: relative;
+  background-color: $bg-accent;
+  font-family: Arial, Helvetica, sans-serif;
+  @include font(14px, 400);
+  color: $txt-default;
+  line-height: 20px;
+}
+
+.clr {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: $txt-default;
+  text-decoration: none;
+  @include transition(all ease-in-out 0.2s);
+  &:hover,
+  &:focus {
+    color: $txt-link;
+  }
+}
+
+.fl-left {
+  float: left;
+  box-sizing: border-box;
+}
+
+.fl-right {
+  float: right;
+  box-sizing: border-box;
+}
+
+.clr {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+input {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px 12px;
+}
