@@ -1,0 +1,5 @@
+// === Function convert px to rem === //
+// How to use: { transform: translateX(#{f-pxRem(22)}); border: #{f-pxRem(22)} solid map-get($colors, white); }
+@function f-pxRem($value) {
+  @return 0rem + ($value / 16);
+}
